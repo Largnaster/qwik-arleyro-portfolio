@@ -1,0 +1,13 @@
+{
+    "runtime": {
+        "head": {
+            "home": {
+                "title": "Arleyro",
+                "description": "Arleyro's personal website"
+            },
+            "page": {
+                "title": "Arleyro | {{page}}"
+            }
+        }
+    }
+}

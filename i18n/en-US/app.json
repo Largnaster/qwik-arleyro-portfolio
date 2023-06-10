@@ -1,0 +1,12 @@
+{
+    "app": {
+        "changeLocale": "Change language",
+        "nav": {
+            "about": "About",
+            "home": "Home",
+            "login": "Login",
+            "logout": "Logout",
+            "register": "Register"
+        }
+    }
+}

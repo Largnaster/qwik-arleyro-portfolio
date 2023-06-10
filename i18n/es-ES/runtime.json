@@ -1,0 +1,13 @@
+{
+    "runtime": {
+        "head": {
+            "home": {
+                "title": "Arleyro",
+                "description": "Sitio personal de Bryann Torres"
+            },
+            "page": {
+                "title": "Arleyro | {{page}}"
+            }
+        }
+    }
+}
