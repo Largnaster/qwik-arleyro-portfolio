@@ -28,6 +28,7 @@ build
 .rollup.cache
 dist
 tsconfig.tsbuildinfo
+tailwind.config.js
 vite.config.ts
 *.spec.tsx
 *.spec.ts

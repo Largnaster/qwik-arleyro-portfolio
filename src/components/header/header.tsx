@@ -16,39 +16,31 @@ export const Header = component$(() => {
   };
 
   return (
-    <>
-      <header>
-        <div>
-          <Link href={getHref("/")}>
-            <BsGlobe />
+    <header>
+      <div>
+        <Link href={getHref("/")}>
+          <BsGlobe />
+        </Link>
+      </div>
+      <ul>
+        <li>
+          <Link
+            href={getHref("/")}
+            class={{
+              active:
+                pathname === "/" ||
+                config.supportedLocales.some((locale) =>
+                  pathname.endsWith(`${locale.lang}/`)
+                )
+            }}
+          >
+            {t("app.nav.home")}
           </Link>
-        </div>
-        <ul>
-          <li>
-            <Link
-              href={getHref("/")}
-              class={{
-                active:
-                  pathname === "/" ||
-                  config.supportedLocales.some((locale) =>
-                    pathname.endsWith(`${locale.lang}/`)
-                  )
-              }}
-            >
-              {t("app.nav.home")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={getHref("/joke")}
-              class={{ active: pathname.endsWith("/joke") }}
-            >
-              {t("app.nav.joke")}
-            </Link>
-          </li>
-        </ul>
-      </header>
-      <ChangeLocale />
-    </>
+        </li>
+        <li>
+          <ChangeLocale />
+        </li>
+      </ul>
+    </header>
   );
 });

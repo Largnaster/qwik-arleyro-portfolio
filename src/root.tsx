@@ -10,6 +10,7 @@ import { config } from "./speak-config";
 
 import "./global.css";
 import { translationFn } from "./speak-functions";
+import ThemeProvider from "./components/theme-provider/theme-provider";
 
 export default component$(() => {
   /**
@@ -20,18 +21,20 @@ export default component$(() => {
    */
 
   return (
-    <QwikSpeakProvider config={config} translationFn={translationFn}>
-      <QwikCityProvider>
-        <head>
-          <meta charSet="utf-8" />
-          <link rel="manifest" href="/manifest.json" />
-          <RouterHead />
-        </head>
-        <body>
-          <RouterOutlet />
-          <ServiceWorkerRegister />
-        </body>
-      </QwikCityProvider>
-    </QwikSpeakProvider>
+    <ThemeProvider>
+      <QwikSpeakProvider config={config} translationFn={translationFn}>
+        <QwikCityProvider>
+          <head>
+            <meta charSet="utf-8" />
+            <link rel="manifest" href="/manifest.json" />
+            <RouterHead />
+          </head>
+          <body>
+            <RouterOutlet />
+            <ServiceWorkerRegister />
+          </body>
+        </QwikCityProvider>
+      </QwikSpeakProvider>
+    </ThemeProvider>
   );
 });

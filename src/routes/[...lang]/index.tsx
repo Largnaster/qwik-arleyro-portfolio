@@ -10,10 +10,8 @@ const WelcomeComponent = component$(() => {
   return (
     <>
       <div role="presentation" class="ellipsis"></div>
-      <div role="presentation" class="ellipsis ellipsis-purple"></div>
-
-      <div class="container container-flex">
-        <div q:slot="title" class="icon icon-cli">
+      <div class="container">
+        <div q:slot="title" class="icon">
           {t("app.changeLocale")}
         </div>
       </div>
@@ -23,10 +21,12 @@ const WelcomeComponent = component$(() => {
 
 export default component$(() => {
   return (
-    <Speak assets={["app"]}>
-      <Hero />
-      <WelcomeComponent />
-    </Speak>
+    <>
+      <Speak assets={["app"]}>
+        <Hero />
+        <WelcomeComponent />
+      </Speak>
+    </>
   );
 });
 
