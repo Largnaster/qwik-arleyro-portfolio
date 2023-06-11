@@ -2,7 +2,7 @@
     "app": {
         "changeLocale": "Cambiar idioma",
         "nav": {
-            "about": "Acerca de",
+            "joke": "Chiste",
             "home": "Inicio",
             "login": "Iniciar sesión",
             "logout": "Cerrar sesión",

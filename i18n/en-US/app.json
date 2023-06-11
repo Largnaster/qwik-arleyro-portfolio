@@ -2,7 +2,7 @@
     "app": {
         "changeLocale": "Change language",
         "nav": {
-            "about": "About",
+            "joke": "Joke",
             "home": "Home",
             "login": "Login",
             "logout": "Logout",
