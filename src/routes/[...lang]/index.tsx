@@ -9,11 +9,8 @@ const WelcomeComponent = component$(() => {
 
   return (
     <>
-      <div role="presentation" class="ellipsis"></div>
       <div class="container">
-        <div q:slot="title" class="icon">
-          {t("app.changeLocale")}
-        </div>
+        <div class="text-center">{t("app.changeLocale")}</div>
       </div>
     </>
   );

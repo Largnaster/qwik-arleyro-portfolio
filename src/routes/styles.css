@@ -2,22 +2,6 @@ h1 {
   font-size: 3.2rem;
   text-align: center;
 }
-h1 .highlight,
-h3 .highlight {
-  color: var(--qwik-light-blue);
-}
-
-h2 {
-  font-weight: 400;
-  font-size: 2.4rem;
-}
-h2 .highlight {
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 2rem;
-}
 
 @media screen and (min-width: 768px) {
   h1 {
@@ -34,13 +18,7 @@ h3 {
 /* TAGS ----------------------------------------- */
 a {
   text-decoration: none;
-  color: var(--qwik-light-blue);
-}
-
-code {
-  background: rgba(230, 230, 230, 0.3);
-  border-radius: 4px;
-  padding: 2px 6px;
+  color: var(--accent-foreground);
 }
 
 ul {
@@ -48,50 +26,9 @@ ul {
   padding-left: 20px;
 }
 
-/* CONTAINER ------------------------------------ */
-.container {
-  margin: 0 auto;
-  padding: 30px 40px;
-}
-.container.container-purple {
-  background: var(--qwik-light-purple);
-}
-.container.container-dark {
-  background: var(--qwik-dark-background);
-  color: var(--qwik-dark-text);
-}
-.container.container-center {
-  text-align: center;
-}
-
-.container.container-spacing-xl {
-  padding: 50px 40px;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    padding: 50px 80px;
-  }
-  .container.container-spacing-xl {
-    padding: 100px 60px;
-  }
-  .container.container-flex {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-  }
-}
-
 /* BUTTONS -------------------------------------- */
 a.button,
 button {
-  background: var(--qwik-light-blue);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  font-size: 0.8rem;
-  padding: 15px 20px;
   text-align: center;
 }
 

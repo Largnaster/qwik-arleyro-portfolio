@@ -47,7 +47,6 @@ export const Header = component$(() => {
         </li>
       </ul>
       <button
-        class="default-button"
         onClick$={() => {
           theme.value = theme.value === "light" ? "dark" : "light";
         }}

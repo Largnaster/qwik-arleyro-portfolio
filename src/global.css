@@ -78,8 +78,9 @@
     @apply bg-background text-foreground m-0 p-0;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
-  .default-button {
-    @apply dark:bg-background dark:text-foreground;
+  button,
+  a.button {
+    @apply bg-primary text-primary-foreground rounded-lg border-none cursor-pointer text-sm px-3.5 py-5 text-center;
   }
 }
 
