@@ -1,4 +1,4 @@
-import { component$, useContext } from "@builder.io/qwik";
+import { component$, useContext, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import { useSpeakConfig, useSpeakLocale, useTranslate } from "qwik-speak";
 import { ChangeLocale } from "../change-locale/change-locale";
@@ -18,8 +18,14 @@ export const Header = component$(() => {
     return lang === config.defaultLocale.lang ? name : `/${lang}${name}`;
   };
 
+  useVisibleTask$(({ track }) => {
+    track(theme);
+
+    localStorage.theme = theme.value;
+  });
+
   return (
-    <header class="container">
+    <header>
       <ul>
         <li>
           <Link

@@ -3,7 +3,8 @@ import {
   component$,
   createContextId,
   useSignal,
-  useContextProvider
+  useContextProvider,
+  useVisibleTask$
 } from "@builder.io/qwik";
 import { QwikSpeakProvider } from "qwik-speak";
 import {
@@ -20,16 +21,17 @@ import { translationFn } from "./speak-functions";
 export const ThemeContext = createContextId<Signal<string>>("theme");
 
 export default component$(() => {
-  /**
-   * The root of a QwikCity site always start with the <QwikCityProvider> component,
-   * immediately followed by the document's <head> and <body>.
-   *
-   * Dont remove the `<head>` and `<body>` elements.
-   */
-
   const defaultTheme = "light";
 
   const theme = useSignal(defaultTheme);
+
+  useVisibleTask$(() => {
+    const hasDarkModeSelected =
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    theme.value = hasDarkModeSelected ? "dark" : "light";
+  });
 
   useContextProvider(ThemeContext, theme);
 

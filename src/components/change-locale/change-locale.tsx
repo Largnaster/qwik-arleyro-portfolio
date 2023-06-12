@@ -38,9 +38,7 @@ export const ChangeLocale = component$(() => {
 
   return (
     <div>
-      <h2 class="bg-primary text-primary-foreground">
-        {t("app.changeLocale")}
-      </h2>
+      <h2>{t("app.changeLocale")}</h2>
       <div>
         {config.supportedLocales.map((langOption) => (
           <button
