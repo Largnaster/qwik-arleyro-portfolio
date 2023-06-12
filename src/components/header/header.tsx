@@ -1,8 +1,9 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useContext } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import { useSpeakConfig, useSpeakLocale, useTranslate } from "qwik-speak";
 import { ChangeLocale } from "../change-locale/change-locale";
 import { BsGlobe } from "@qwikest/icons/bootstrap";
+import { ThemeContext } from "~/root";
 
 export const Header = component$(() => {
   const t = useTranslate();
@@ -11,17 +12,14 @@ export const Header = component$(() => {
   const lang = useSpeakLocale().lang;
   const config = useSpeakConfig();
 
+  const theme = useContext(ThemeContext);
+
   const getHref = (name: string) => {
     return lang === config.defaultLocale.lang ? name : `/${lang}${name}`;
   };
 
   return (
-    <header>
-      <div>
-        <Link href={getHref("/")}>
-          <BsGlobe />
-        </Link>
-      </div>
+    <header class="container">
       <ul>
         <li>
           <Link
@@ -34,6 +32,7 @@ export const Header = component$(() => {
                 )
             }}
           >
+            <BsGlobe />
             {t("app.nav.home")}
           </Link>
         </li>
@@ -41,6 +40,14 @@ export const Header = component$(() => {
           <ChangeLocale />
         </li>
       </ul>
+      <button
+        class="default-button"
+        onClick$={() => {
+          theme.value = theme.value === "light" ? "dark" : "light";
+        }}
+      >
+        Check theme
+      </button>
     </header>
   );
 });

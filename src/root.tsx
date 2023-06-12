@@ -1,4 +1,10 @@
-import { component$ } from "@builder.io/qwik";
+import {
+  type Signal,
+  component$,
+  createContextId,
+  useSignal,
+  useContextProvider
+} from "@builder.io/qwik";
 import { QwikSpeakProvider } from "qwik-speak";
 import {
   QwikCityProvider,
@@ -10,7 +16,8 @@ import { config } from "./speak-config";
 
 import "./global.css";
 import { translationFn } from "./speak-functions";
-import ThemeProvider from "./components/theme-provider/theme-provider";
+
+export const ThemeContext = createContextId<Signal<string>>("theme");
 
 export default component$(() => {
   /**
@@ -20,21 +27,25 @@ export default component$(() => {
    * Dont remove the `<head>` and `<body>` elements.
    */
 
+  const defaultTheme = "light";
+
+  const theme = useSignal(defaultTheme);
+
+  useContextProvider(ThemeContext, theme);
+
   return (
-    <ThemeProvider>
-      <QwikSpeakProvider config={config} translationFn={translationFn}>
-        <QwikCityProvider>
-          <head>
-            <meta charSet="utf-8" />
-            <link rel="manifest" href="/manifest.json" />
-            <RouterHead />
-          </head>
-          <body>
-            <RouterOutlet />
-            <ServiceWorkerRegister />
-          </body>
-        </QwikCityProvider>
-      </QwikSpeakProvider>
-    </ThemeProvider>
+    <QwikSpeakProvider config={config} translationFn={translationFn}>
+      <QwikCityProvider>
+        <head>
+          <meta charSet="utf-8" />
+          <link rel="manifest" href="/manifest.json" />
+          <RouterHead />
+        </head>
+        <body class={theme}>
+          <RouterOutlet />
+          <ServiceWorkerRegister />
+        </body>
+      </QwikCityProvider>
+    </QwikSpeakProvider>
   );
 });
