@@ -26,7 +26,7 @@ export const Header = component$(() => {
 
   return (
     <header>
-      <ul>
+      <ul class="nav-items">
         <li>
           <Link
             href={getHref("/")}
@@ -38,7 +38,7 @@ export const Header = component$(() => {
                 )
             }}
           >
-            <BsGlobe />
+            <BsGlobe class="icon" />
             {t("app.nav.home")}
           </Link>
         </li>
