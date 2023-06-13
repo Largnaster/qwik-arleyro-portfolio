@@ -91,6 +91,20 @@
   .icon::before {
     @apply top-1 inline-block mr-5 relative w-4 h-4;
   }
+  .anchor {
+    @apply block text-sm text-center text-accent-foreground leading-6;
+  }
+  .anchor span:not(.spacer) {
+    @apply block;
+  }
+  .spacer {
+    @apply hidden py-0 px-4;
+  }
+  @media screen and (min-width: 768px) {
+    .anchor span {
+      @apply inline !important;
+    }
+  }
 }
 
 html {
