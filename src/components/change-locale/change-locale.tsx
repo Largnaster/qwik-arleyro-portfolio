@@ -8,6 +8,7 @@ import {
 } from "qwik-speak";
 
 import type { SpeakLocale } from "qwik-speak";
+import { Button } from "../common/Button";
 
 export const ChangeLocale = component$(() => {
   const t = useTranslate();
@@ -41,13 +42,13 @@ export const ChangeLocale = component$(() => {
       <h2>{t("app.changeLocale")}</h2>
       <div>
         {config.supportedLocales.map((langOption) => (
-          <button
+          <Button
             key={langOption.lang}
             class={{ active: langOption.lang == locale.lang }}
             onClick$={async () => await navigateByLocale$(langOption)}
           >
             {dn(langOption.lang, { type: "language" })}
-          </button>
+          </Button>
         ))}
       </div>
     </div>

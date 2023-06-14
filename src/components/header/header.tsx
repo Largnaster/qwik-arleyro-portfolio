@@ -4,6 +4,7 @@ import { useSpeakConfig, useSpeakLocale, useTranslate } from "qwik-speak";
 import { ChangeLocale } from "../change-locale/change-locale";
 import { BsGlobe } from "@qwikest/icons/bootstrap";
 import { ThemeContext } from "~/root";
+import { Button } from "../common/Button";
 
 export const Header = component$(() => {
   const t = useTranslate();
@@ -46,13 +47,13 @@ export const Header = component$(() => {
           <ChangeLocale />
         </li>
       </ul>
-      <button
+      <Button
         onClick$={() => {
           theme.value = theme.value === "light" ? "dark" : "light";
         }}
       >
         Check theme
-      </button>
+      </Button>
     </header>
   );
 });

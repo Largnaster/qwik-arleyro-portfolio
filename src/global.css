@@ -80,7 +80,31 @@
   }
   button,
   a.button {
-    @apply bg-primary text-primary-foreground rounded-lg border-none cursor-pointer text-sm px-3.5 py-5 text-center;
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+  }
+  button.primary,
+  a.button.primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+  button.secondary,
+  a.button.secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+  button.outlined,
+  a.button.outlined {
+    @apply border border-input hover:bg-accent hover:text-accent-foreground;
+  }
+  button.sm,
+  a.button.sm {
+    @apply h-9 px-3 rounded-md;
+  }
+  button.md,
+  a.button.md {
+    @apply h-10 py-2 px-4;
+  }
+  button.lg,
+  a.button.lg {
+    @apply h-11 px-8 rounded-md;
   }
   ul.nav-items {
     @apply list-none m-0 p-5;
@@ -104,6 +128,9 @@
     .anchor span {
       @apply inline !important;
     }
+  }
+  .centered {
+    @apply flex flex-col items-center justify-center;
   }
 }
 
