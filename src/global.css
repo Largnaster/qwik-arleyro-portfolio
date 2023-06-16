@@ -28,8 +28,8 @@
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --error: 0 100% 50%;
+    --error-foreground: 210 40% 98%;
 
     --ring: 215 20.2% 65.1%;
 
@@ -61,8 +61,8 @@
     --accent: 216 34% 17%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --error: 0 63% 31%;
+    --error-foreground: 210 40% 98%;
 
     --ring: 216 34% 17%;
 
@@ -78,6 +78,9 @@
     @apply bg-background text-foreground m-0 p-0;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Custom styles based on shadcn */
+  /* Button styles */
   button,
   a.button {
     @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
@@ -94,6 +97,10 @@
   a.button.outlined {
     @apply border border-input hover:bg-accent hover:text-accent-foreground;
   }
+  button.error,
+  a.button.error {
+    @apply bg-error text-error-foreground hover:bg-error/90;
+  }
   button.sm,
   a.button.sm {
     @apply h-9 px-3 rounded-md;
@@ -106,20 +113,78 @@
   a.button.lg {
     @apply h-11 px-8 rounded-md;
   }
-  ul.nav-items {
-    @apply list-none m-0 p-5;
+  button.active,
+  a.button.active {
+    @apply bg-accent border-accent text-accent-foreground hover:bg-accent hover:text-accent-foreground;
   }
+  /* Typography styles */
+  h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+  h2 {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+  }
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+  p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+  p.lead {
+    @apply text-xl text-muted-foreground;
+  }
+  p.muted {
+    @apply text-sm text-muted-foreground;
+  }
+  div.large {
+    @apply text-lg font-semibold;
+  }
+  small {
+    @apply text-sm font-medium leading-none;
+  }
+  blockquote {
+    @apply mt-6 border-l-2 pl-6 italic;
+  }
+  /* Table styles */
+  div.table-container {
+    @apply my-6 w-full overflow-y-auto;
+  }
+  table {
+    @apply w-full;
+  }
+  tr {
+    @apply m-0 border-t p-0 even:bg-muted;
+  }
+  th {
+    @apply border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right;
+  }
+  td {
+    @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+  }
+  /* List styles */
+  ul.nav-items {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+  /* Code styles */
+  code {
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+  }
+  /* Anchor styles */
   a {
     @apply text-accent-foreground no-underline;
-  }
-  .icon::before {
-    @apply top-1 inline-block mr-5 relative w-4 h-4;
   }
   .anchor {
     @apply block text-sm text-center text-accent-foreground leading-6;
   }
   .anchor span:not(.spacer) {
     @apply block;
+  }
+  /* icon styles */
+  .icon::before {
+    @apply top-1 inline-block mr-5 relative w-4 h-4;
   }
   .spacer {
     @apply hidden py-0 px-4;
@@ -129,6 +194,7 @@
       @apply inline !important;
     }
   }
+  /* Class styles */
   .centered {
     @apply flex flex-col items-center justify-center;
   }

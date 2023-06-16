@@ -1,4 +1,5 @@
 import { type HTMLAttributes, component$, Slot } from "@builder.io/qwik";
+import { type } from "os";
 
 interface ButtonProps<T> extends HTMLAttributes<T> {
   onClick$?: () => void;
@@ -13,19 +14,32 @@ interface ButtonProps<T> extends HTMLAttributes<T> {
   name?: string;
   type?: "submit" | "reset" | "button";
   value?: string | string[] | number;
-  variant?: "primary" | "outlined" | "secondary";
+  variant?: "primary" | "outlined" | "secondary" | "error";
   size?: "sm" | "md" | "lg";
+  class?: string | Record<string, boolean>;
 }
 
 export const Button = component$<ButtonProps<HTMLButtonElement>>((props) => {
   const {
-    class: givenClass,
+    class: className,
     variant = "primary",
     size = "md",
     ...otherProps
   } = props;
 
-  const classList = `${variant} ${size} ${givenClass}`;
+  console.info("className", className);
+
+  let classList = `${variant} ${size} `;
+
+  if (typeof className === "string") {
+    classList += className;
+  } else if (typeof className === "object") {
+    for (const [key, value] of Object.entries(className)) {
+      if (value) {
+        classList += `${key} `;
+      }
+    }
+  }
 
   return (
     <button class={classList.trim()} {...otherProps}>
