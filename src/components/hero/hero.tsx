@@ -11,6 +11,8 @@ export default component$(() => {
         to have <span class="highlight">you</span> here
       </h1>
       <p>Have fun building your App with Qwik.</p>
+      <p class="lead">This is a p with a lead style</p>
+      <p class="muted">This other has a muted style</p>
       <div class="centered">
         <img
           src={EmployeesImage}

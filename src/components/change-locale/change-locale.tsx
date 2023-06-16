@@ -46,8 +46,13 @@ export const ChangeLocale = component$(() => {
             key={langOption.lang}
             class={{ active: langOption.lang == locale.lang }}
             onClick$={async () => await navigateByLocale$(langOption)}
+            variant="text"
           >
-            {dn(langOption.lang, { type: "language" })}
+            {dn(langOption.lang, {
+              type: "language",
+              style: "short",
+              languageDisplay: "standard"
+            })}
           </Button>
         ))}
       </div>

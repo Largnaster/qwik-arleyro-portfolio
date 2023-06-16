@@ -101,6 +101,14 @@
   a.button.error {
     @apply bg-error text-error-foreground hover:bg-error/90;
   }
+  button.text,
+  a.button.text {
+    @apply hover:bg-accent hover:text-accent-foreground;
+  }
+  button.link,
+  a.button.link {
+    @apply underline-offset-4 hover:underline text-primary;
+  }
   button.sm,
   a.button.sm {
     @apply h-9 px-3 rounded-md;
@@ -183,8 +191,8 @@
     @apply block;
   }
   /* icon styles */
-  .icon::before {
-    @apply top-1 inline-block mr-5 relative w-4 h-4;
+  .icon {
+    @apply mr-2 w-4 h-4 align-baseline inline-block;
   }
   .spacer {
     @apply hidden py-0 px-4;
