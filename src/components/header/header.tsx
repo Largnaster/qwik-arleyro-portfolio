@@ -5,6 +5,7 @@ import { ChangeLocale } from "../change-locale/change-locale";
 import { BsGlobe } from "@qwikest/icons/bootstrap";
 import { ThemeContext } from "~/root";
 import { Button } from "../common/Button";
+import { LuMoon } from "@qwikest/icons/lucide";
 
 export const Header = component$(() => {
   const t = useTranslate();
@@ -26,8 +27,8 @@ export const Header = component$(() => {
   });
 
   return (
-    <header>
-      <ul class="nav-items">
+    <header class="header">
+      <ul class="nav-menu-item">
         <li>
           <Link
             href={getHref("/")}
@@ -43,17 +44,20 @@ export const Header = component$(() => {
             {t("app.nav.home")}
           </Link>
         </li>
-        <li>
-          <ChangeLocale />
-        </li>
       </ul>
-      <Button
-        onClick$={() => {
-          theme.value = theme.value === "light" ? "dark" : "light";
-        }}
-      >
-        Check theme
-      </Button>
+      <div class="button-group">
+        <ChangeLocale />
+        <Button
+          class="ml-auto"
+          onClick$={() => {
+            theme.value = theme.value === "light" ? "dark" : "light";
+          }}
+          variant="text"
+          aria-label="theme"
+        >
+          <LuMoon class="w-6 h-6" />
+        </Button>
+      </div>
     </header>
   );
 });

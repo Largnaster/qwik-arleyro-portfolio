@@ -1,17 +1,11 @@
 import { $, component$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
-import {
-  useDisplayName,
-  useSpeakConfig,
-  useSpeakLocale,
-  useTranslate
-} from "qwik-speak";
+import { useDisplayName, useSpeakConfig, useSpeakLocale } from "qwik-speak";
 
 import type { SpeakLocale } from "qwik-speak";
 import { Button } from "../common/Button";
 
 export const ChangeLocale = component$(() => {
-  const t = useTranslate();
   const dn = useDisplayName();
 
   const loc = useLocation();
@@ -38,24 +32,21 @@ export const ChangeLocale = component$(() => {
   });
 
   return (
-    <div>
-      <h2>{t("app.changeLocale")}</h2>
-      <div>
-        {config.supportedLocales.map((langOption) => (
-          <Button
-            key={langOption.lang}
-            class={{ active: langOption.lang == locale.lang }}
-            onClick$={async () => await navigateByLocale$(langOption)}
-            variant="text"
-          >
-            {dn(langOption.lang, {
-              type: "language",
-              style: "short",
-              languageDisplay: "standard"
-            })}
-          </Button>
-        ))}
-      </div>
+    <div class="button-group">
+      {config.supportedLocales.map((langOption) => (
+        <Button
+          key={langOption.lang}
+          onClick$={async () => await navigateByLocale$(langOption)}
+          variant="outlined"
+          disabled={langOption.lang == locale.lang}
+        >
+          {dn(langOption.lang, {
+            type: "language",
+            style: "short",
+            languageDisplay: "standard"
+          })}
+        </Button>
+      ))}
     </div>
   );
 });

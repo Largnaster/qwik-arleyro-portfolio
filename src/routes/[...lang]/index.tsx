@@ -9,9 +9,7 @@ const WelcomeComponent = component$(() => {
 
   return (
     <>
-      <div class="container">
-        <div class="text-center">{t("app.changeLocale")}</div>
-      </div>
+      <div class="text-center">{t("app.changeLocale")}</div>
     </>
   );
 });

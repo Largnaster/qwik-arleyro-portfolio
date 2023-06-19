@@ -121,10 +121,6 @@
   a.button.lg {
     @apply h-11 px-8 rounded-md;
   }
-  button.active,
-  a.button.active {
-    @apply bg-accent border-accent text-accent-foreground hover:bg-accent hover:text-accent-foreground;
-  }
   /* Typography styles */
   h1 {
     @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
@@ -173,7 +169,7 @@
     @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
   }
   /* List styles */
-  ul.nav-items {
+  ul.list {
     @apply my-6 ml-6 list-disc [&>li]:mt-2;
   }
   /* Code styles */
@@ -205,6 +201,15 @@
   /* Class styles */
   .centered {
     @apply flex flex-col items-center justify-center;
+  }
+  .header {
+    @apply sticky top-0 z-50 border-b bg-background flex justify-between p-4 mx-16 items-center;
+  }
+  .nav-menu-item {
+    @apply flex justify-end space-x-4;
+  }
+  .button-group {
+    @apply flex flex-wrap space-x-4;
   }
 }
 
