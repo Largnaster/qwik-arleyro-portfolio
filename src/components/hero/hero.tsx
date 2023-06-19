@@ -13,6 +13,9 @@ export default component$(() => {
       <p>Have fun building your App with Qwik.</p>
       <p class="lead">This is a p with a lead style</p>
       <p class="muted">This other has a muted style</p>
+      <div class="card">
+        <p>This is a card</p>
+      </div>
       <div class="centered">
         <img
           src={EmployeesImage}

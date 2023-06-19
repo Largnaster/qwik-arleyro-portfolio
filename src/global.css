@@ -28,8 +28,8 @@
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
-    --error: 0 100% 50%;
-    --error-foreground: 210 40% 98%;
+    --error: 348 100% 35%;
+    --error-foreground: 0 0% 98%;
 
     --ring: 215 20.2% 65.1%;
 
@@ -37,7 +37,7 @@
   }
 
   .dark {
-    --background: 224 71% 4%;
+    --background: 0 0% 7%;
     --foreground: 213 31% 91%;
 
     --muted: 223 47% 11%;
@@ -46,7 +46,7 @@
     --popover: 224 71% 4%;
     --popover-foreground: 215 20.2% 65.1%;
 
-    --card: 224 71% 4%;
+    --card: 0 0% 15%;
     --card-foreground: 213 31% 91%;
 
     --border: 216 34% 17%;
@@ -61,8 +61,8 @@
     --accent: 216 34% 17%;
     --accent-foreground: 210 40% 98%;
 
-    --error: 0 63% 31%;
-    --error-foreground: 210 40% 98%;
+    --error: 350 50% 61%;
+    --error-foreground: 0 0% 0%;
 
     --ring: 216 34% 17%;
 
@@ -188,7 +188,7 @@
   }
   /* icon styles */
   .icon {
-    @apply mr-2 w-4 h-4 align-baseline inline-block;
+    @apply mr-2 w-5 h-5 items-center inline-block;
   }
   .spacer {
     @apply hidden py-0 px-4;
@@ -199,11 +199,17 @@
     }
   }
   /* Class styles */
+  .card {
+    @apply bg-card text-card-foreground overflow-hidden rounded-lg shadow-md;
+  }
+  .container {
+    @apply mx-auto px-8 max-w-7xl;
+  }
   .centered {
     @apply flex flex-col items-center justify-center;
   }
   .header {
-    @apply sticky top-0 z-50 border-b bg-background flex justify-between p-4 mx-16 items-center;
+    @apply sticky top-0 z-50 border-b bg-background flex justify-between px-16 py-4 items-center;
   }
   .nav-menu-item {
     @apply flex justify-end space-x-4;

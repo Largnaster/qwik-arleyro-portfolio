@@ -40,8 +40,10 @@ export const Header = component$(() => {
                 )
             }}
           >
-            <BsGlobe class="icon" />
-            {t("app.nav.home")}
+            <div class="flex items-center flex-nowrap">
+              <BsGlobe class="icon" />
+              {t("app.nav.home")}
+            </div>
           </Link>
         </li>
       </ul>
