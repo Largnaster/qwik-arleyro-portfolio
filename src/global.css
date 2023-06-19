@@ -78,6 +78,9 @@
     @apply bg-background text-foreground m-0 p-0;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+  main {
+    @apply min-h-min py-2;
+  }
 
   /* Custom styles based on shadcn */
   /* Button styles */
@@ -200,7 +203,7 @@
   }
   /* Class styles */
   .card {
-    @apply bg-card text-card-foreground overflow-hidden rounded-lg shadow-md;
+    @apply bg-card text-card-foreground overflow-hidden rounded-lg shadow-lg;
   }
   .container {
     @apply mx-auto px-8 max-w-7xl;

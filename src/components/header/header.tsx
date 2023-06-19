@@ -2,10 +2,9 @@ import { component$, useContext, useVisibleTask$ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import { useSpeakConfig, useSpeakLocale, useTranslate } from "qwik-speak";
 import { ChangeLocale } from "../change-locale/change-locale";
-import { BsGlobe } from "@qwikest/icons/bootstrap";
 import { ThemeContext } from "~/root";
 import { Button } from "../common/Button";
-import { LuMoon } from "@qwikest/icons/lucide";
+import { LuMoon, LuSun, LuHome } from "@qwikest/icons/lucide";
 
 export const Header = component$(() => {
   const t = useTranslate();
@@ -41,7 +40,7 @@ export const Header = component$(() => {
             }}
           >
             <div class="flex items-center flex-nowrap">
-              <BsGlobe class="icon" />
+              <LuHome class="icon" />
               {t("app.nav.home")}
             </div>
           </Link>
@@ -57,7 +56,11 @@ export const Header = component$(() => {
           variant="text"
           aria-label="theme"
         >
-          <LuMoon class="w-6 h-6" />
+          {theme.value === "light" ? (
+            <LuSun class="w-6 h-6" />
+          ) : (
+            <LuMoon class="w-6 h-6" />
+          )}
         </Button>
       </div>
     </header>

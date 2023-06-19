@@ -29,6 +29,22 @@ export function extractBase({ serverData }: RenderOptions): string {
   }
 }
 
+// TODO: Temporary fix to filter annoying warning message from qwik duplicate JSXNode.
+if (isDev) {
+  const consoleWarn = console.warn;
+  const SUPPRESS_WARNING = ['Duplicate implementations of "JSXNode" found'];
+
+  console.warn = function filterWarnings(msg, ...args) {
+    if (
+      !SUPPRESS_WARNING.some(
+        (w) => msg.includes(w) || args.some((a) => a.includes(w))
+      )
+    ) {
+      consoleWarn(msg, ...args);
+    }
+  };
+}
+
 export default function (opts: RenderToStreamOptions) {
   return renderToStream(<Root />, {
     manifest,
