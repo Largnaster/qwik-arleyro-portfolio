@@ -2,11 +2,22 @@
     "app": {
         "changeLocale": "Change language",
         "nav": {
-            "joke": "Joke",
-            "home": "Home",
-            "login": "Login",
-            "logout": "Logout",
-            "register": "Register"
-        }
+            "home": "Home"
+        },
+        "introduction": {
+            "title": "Bryann Torres",
+            "subtitle": "Full stack developer",
+            "description": "Brief description about me as a developer"
+        },
+        "work": {
+            "description": "List of my work experience with a brief description of each one"
+        },
+        "about": {
+            "description": "Brief description about me as a person"
+        },
+        "contact": {
+            "description": "More detailed information about how to contact me"
+        },
+        "footer": "Made with Qwik"
     }
 }

@@ -2,11 +2,22 @@
     "app": {
         "changeLocale": "Cambiar idioma",
         "nav": {
-            "joke": "Chiste",
-            "home": "Inicio",
-            "login": "Iniciar sesión",
-            "logout": "Cerrar sesión",
-            "register": "Registrarse"
-        }
+            "home": "Inicio"
+        },
+        "introduction": {
+            "title": "Bryann Torres",
+            "subtitle": "Desarrollador full stack",
+            "description": "Breve descipción de mi persona como desarrollador"
+        },
+        "work": {
+            "description": "Listado donde se muestran los proyectos en los que he trabajado, con una breve descripción de cada uno"
+        },
+        "about": {
+            "description": "Breve descripción de mi persona"
+        },
+        "contact": {
+            "description": "Mas información sobre como contactarme"
+        },
+        "footer": "Hecho con Qwik"
     }
 }

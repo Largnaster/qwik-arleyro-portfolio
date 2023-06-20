@@ -40,7 +40,7 @@ export const Header = component$(() => {
             }}
           >
             <div class="flex items-center flex-nowrap">
-              <LuHome class="icon" />
+              <LuHome class="icon nav" />
               {t("app.nav.home")}
             </div>
           </Link>

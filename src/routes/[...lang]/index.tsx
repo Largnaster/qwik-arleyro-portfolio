@@ -1,27 +1,16 @@
-import { component$ } from "@builder.io/qwik";
+import { Fragment, component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Speak, useTranslate } from "qwik-speak";
+import { Speak } from "qwik-speak";
 
-import Hero from "~/components/hero/hero";
-
-const WelcomeComponent = component$(() => {
-  const t = useTranslate();
-
-  return (
-    <>
-      <div class="text-center">{t("app.changeLocale")}</div>
-    </>
-  );
-});
+import Hero from "~/components/curriculum/curriculum";
 
 export default component$(() => {
   return (
-    <>
+    <Fragment>
       <Speak assets={["app"]}>
         <Hero />
-        <WelcomeComponent />
       </Speak>
-    </>
+    </Fragment>
   );
 });
 
