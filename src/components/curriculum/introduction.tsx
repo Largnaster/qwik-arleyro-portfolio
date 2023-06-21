@@ -36,7 +36,14 @@ export default component$(() => {
         </div>
       </div>
       <div>
-        <p>{t("app.introduction.description")}</p>
+        <p>
+          Hello! I'm Bryann Torres, a dedicated Full Stack Developer with a
+          year's experience in the tech industry. My expertise spans
+          technologies such as React, Django, TypeScript, Python, Postgres, and
+          JavaScript. In my current role, I've been successfully maintaining and
+          upgrading web applications, addressing client needs, troubleshooting
+          bugs, and sharing knowledge with my team.
+        </p>
       </div>
     </div>
   );

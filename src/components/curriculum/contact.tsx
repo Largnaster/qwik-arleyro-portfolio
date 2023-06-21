@@ -6,7 +6,10 @@ export default component$(() => {
 
   return (
     <div>
-      <p>{t("app.contact.description")}</p>
+      <h2>Contact.</h2>
+      <div>
+        <p>{t("app.contact.description")}</p>
+      </div>
     </div>
   );
 });
