@@ -10,12 +10,16 @@
             "description": "Breve descipción de mi persona como desarrollador"
         },
         "work": {
+            "title": "Expereincia laboral",
+            "projects": "Proyectos",
             "description": "Listado donde se muestran los proyectos en los que he trabajado, con una breve descripción de cada uno"
         },
         "about": {
+            "title": "Sobre mi",
             "description": "Breve descripción de mi persona"
         },
         "contact": {
+            "title": "Contacto",
             "description": "Mas información sobre como contactarme"
         },
         "footer": "Hecho con Qwik"

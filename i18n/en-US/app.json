@@ -10,12 +10,16 @@
             "description": "Brief description about me as a developer"
         },
         "work": {
+            "title": "Work experience",
+            "projects": "Projects",
             "description": "List of my work experience with a brief description of each one"
         },
         "about": {
+            "title": "About me",
             "description": "Brief description about me as a person"
         },
         "contact": {
+            "title": "Contact",
             "description": "More detailed information about how to contact me"
         },
         "footer": "Made with Qwik"
