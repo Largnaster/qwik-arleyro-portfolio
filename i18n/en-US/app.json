@@ -30,6 +30,7 @@
             "description": "More detailed information about how to contact me"
         },
         "footer": {
+            "externalLinks": "External links",
             "resources": "Resources",
             "contact": "Reach me"
         }

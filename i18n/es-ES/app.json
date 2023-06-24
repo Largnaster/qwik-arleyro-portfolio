@@ -30,6 +30,7 @@
             "description": "Mas información sobre como contactarme"
         },
         "footer": {
+            "externalLinks": "Enlaces externos",
             "resources": "Recursos",
             "contact": "Contáctame"
         }

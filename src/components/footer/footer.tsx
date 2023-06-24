@@ -10,9 +10,21 @@ export default component$(() => {
   return (
     <footer>
       <div class="links">
-        <div class="inline-block"></div>
         <div>
           <div class="large">{t("app.footer.resources")}</div>
+          <ul class="list">
+            <li>
+              <Link
+                target="_blank"
+                href="https://github.com/Largnaster/qwik-arleyro-portfolio"
+              >
+                This project
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div class="large">{t("app.footer.externalLinks")}</div>
           <ul class="list">
             <li>
               <Link target="_blank" href="https://qwik.builder.io/">
