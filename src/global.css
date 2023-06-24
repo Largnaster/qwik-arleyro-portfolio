@@ -99,7 +99,7 @@
     @apply py-8 border-border border-t mt-8;
   }
   footer > .links {
-    @apply flex flex-wrap justify-between items-start px-56 mb-8;
+    @apply flex flex-wrap justify-between items-start px-[12vw] mb-8;
   }
   footer > div > div > ul > li > a {
     @apply hover:underline-offset-2 hover:underline;
@@ -151,7 +151,7 @@
     @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
   }
   h2 {
-    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors mt-5;
   }
   h3 {
     @apply scroll-m-20 text-2xl font-semibold tracking-tight;
@@ -163,7 +163,7 @@
     @apply leading-7;
   }
   p:not(:first-child) {
-    @apply mt-6;
+    @apply mt-3;
   }
   p.lead {
     @apply text-xl text-muted-foreground;
@@ -255,7 +255,7 @@
     @apply flex flex-col items-center justify-center;
   }
   .header {
-    @apply sticky top-0 z-50 border-border border-b bg-background flex justify-between px-16 py-4 items-center;
+    @apply sticky top-0 z-50 border-border border-b bg-background flex justify-between px-[12vw] py-4 items-center;
   }
   .nav-menu-item {
     @apply flex justify-end space-x-4;
@@ -264,7 +264,7 @@
     @apply flex flex-wrap space-x-4;
   }
   .card-container {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-start my-4;
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-start mt-4;
   }
 }
 
@@ -276,6 +276,10 @@ html {
 
 @media (max-width: 640px) {
   .container {
+    @apply px-4;
+  }
+  .header,
+  footer {
     @apply px-4;
   }
   footer > .links {

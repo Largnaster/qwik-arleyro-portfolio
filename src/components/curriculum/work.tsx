@@ -24,8 +24,8 @@ export default component$(() => {
     <div>
       <h2>{t("app.work.title")}</h2>
       <div>
-        <p>{t("app.work.experience")}</p>
         <p>{t("app.work.myWork")}</p>
+        <p>{t("app.work.experience")}</p>
       </div>
       <div>
         <h3>{t("app.work.projects")}</h3>

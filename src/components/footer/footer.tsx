@@ -60,7 +60,7 @@ export default component$(() => {
           </ul>
         </div>
       </div>
-      <div class="container flex justify-center items-center">
+      <div class="flex justify-center items-center">
         <a
           href="https://github.com/Largnaster/"
           target="_blank"
