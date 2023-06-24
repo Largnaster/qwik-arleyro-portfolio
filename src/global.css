@@ -98,7 +98,12 @@
   footer {
     @apply py-8 border-border border-t mt-8;
   }
-
+  footer > .links {
+    @apply flex flex-wrap justify-between items-start px-56 mb-8;
+  }
+  footer > div > div > ul > li > a {
+    @apply hover:underline-offset-2 hover:underline;
+  }
   /* Custom styles inspired by shadcn and material */
   /* Button styles */
   button,
@@ -224,24 +229,21 @@
     }
   }
   /* icon styles */
-  footer > .links {
-    @apply flex flex-wrap justify-between items-start px-56 mb-8;
-  }
-  footer > div > div > ul > li > a {
-    @apply hover:underline-offset-2 hover:underline;
-  }
   .icon {
     @apply mr-2 w-5 h-5 items-center inline-block;
   }
   .icon:not(.nav) {
     @apply w-6 h-6 m-0;
   }
+  .theme-icon {
+    @apply w-6 h-6 opacity-0 transform scale-0 transition-all ease-in-out duration-500;
+  }
+  .theme-icon.active {
+    @apply opacity-100 transform scale-100;
+  }
   /* Class styles */
   .card {
-    @apply bg-card text-card-foreground overflow-hidden rounded-lg shadow-lg py-4 px-6 mb-4;
-  }
-  .card:not(:first-child) {
-    @apply mt-4;
+    @apply bg-card text-card-foreground overflow-hidden rounded-lg shadow-lg py-4 px-6;
   }
   .chip {
     @apply bg-card text-card-foreground overflow-hidden rounded-lg shadow-lg py-1 px-2;
@@ -260,6 +262,9 @@
   }
   .button-group {
     @apply flex flex-wrap space-x-4;
+  }
+  .card-container {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-start my-4;
   }
 }
 

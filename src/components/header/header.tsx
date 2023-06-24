@@ -1,4 +1,4 @@
-import { component$, useContext, useVisibleTask$ } from "@builder.io/qwik";
+import { component$, useContext, useVisibleTask$, $ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import { useSpeakConfig, useSpeakLocale, useTranslate } from "qwik-speak";
 import { ChangeLocale } from "../change-locale/change-locale";
@@ -23,6 +23,10 @@ export const Header = component$(() => {
     track(theme);
 
     localStorage.theme = theme.value;
+  });
+
+  const handleThemeChange = $(() => {
+    theme.value = theme.value === "light" ? "dark" : "light";
   });
 
   return (
@@ -50,17 +54,22 @@ export const Header = component$(() => {
         <ChangeLocale />
         <Button
           class="ml-auto"
-          onClick$={() => {
-            theme.value = theme.value === "light" ? "dark" : "light";
-          }}
+          onClick$={handleThemeChange}
           variant="text"
           aria-label="theme"
         >
-          {theme.value === "light" ? (
-            <LuSun class="w-6 h-6" />
-          ) : (
-            <LuMoon class="w-6 h-6" />
-          )}
+          <div class="relative inset-0 flex items-center justify-center w-5">
+            <LuSun
+              class={`absolute theme-icon transition-transform ${
+                theme.value === "light" ? "active" : ""
+              }`}
+            />
+            <LuMoon
+              class={`absolute theme-icon transition-transform ${
+                theme.value === "dark" ? "active" : ""
+              }`}
+            />
+          </div>
         </Button>
       </div>
     </header>

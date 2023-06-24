@@ -29,13 +29,15 @@ export default component$(() => {
       </div>
       <div>
         <h3>{t("app.work.projects")}</h3>
-        {projectsList.map((project) => (
-          <Card
-            key={`project_card_${project.name}`}
-            title={project.name}
-            description={project.description}
-          />
-        ))}
+        <div class="card-container">
+          {projectsList.map((project) => (
+            <Card
+              key={`project_card_${project.name}`}
+              title={project.name}
+              description={project.description}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
