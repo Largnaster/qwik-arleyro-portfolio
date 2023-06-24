@@ -7,21 +7,31 @@
         "introduction": {
             "title": "Bryann Torres",
             "subtitle": "Full stack developer",
-            "description": "Brief description about me as a developer"
+            "aboutMe": "Hello! I'm Bryann Torres, a dedicated Full Stack Developer with a year's experience in the tech industry. My expertise spans technologies such as React, Django, TypeScript, Python, Postgres, and JavaScript. In my current role, I've been successfully maintaining and upgrading web applications, addressing client needs, troubleshooting bugs, and sharing knowledge with my team."
         },
         "work": {
             "title": "Work experience",
             "projects": "Projects",
-            "description": "List of my work experience with a brief description of each one"
+            "experience": "With over a year of experience my main functions corresponds to maintaining and developing features for web applications, all while ensuring to meet the specific requirements of my clients.",
+            "myWork": "As a full stack developer, my work primarily involves using React TypeScript and Django. I value teamwork, readily share knowledge with my colleagues, and consistently learn new things to enhance my skills.",
+            "projectsList": {
+                "factcil": "A web application developed with React and Django for freelancers with which they can request advance payments and control their finances.",
+                "discordBot": "A personal project still under development of a Discord bot developed on top of Node JS, using DiscordJS, TypeScript, and MongoDB.",
+                "asodatos": "A fintech project developed with React and Django. Through this platform it is possible to manage users' credit applications as well as their installments."
+            }
         },
         "about": {
             "title": "About me",
-            "description": "Brief description about me as a person"
+            "location": "Based in Colombia",
+            "myDescription": "I'm a passionate developer constantly learning to refine my skills and share knowledge with others."
         },
         "contact": {
             "title": "Contact",
             "description": "More detailed information about how to contact me"
         },
-        "footer": "Made with Qwik"
+        "footer": {
+            "resources": "Resources",
+            "contact": "Reach me"
+        }
     }
 }

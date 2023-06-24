@@ -12,16 +12,26 @@
         "work": {
             "title": "Expereincia laboral",
             "projects": "Proyectos",
-            "description": "Listado donde se muestran los proyectos en los que he trabajado, con una breve descripción de cada uno"
+            "experience": "Cuento con más de un año de experiencia, mis labores principales corresponden con el mantenimiento y desarrollo de funcionalidades para aplicaciones web, mientras me aseguro de cumplir con los requerimientos específicos de los clientes.",
+            "myWork": "Como desarrollador Full Stack, mi trabajo involucra principalmente el uso de React, TypeScript y Django. Valoro el trabajo en equipo, comparto conocimientos con mis compañeros de trabajo y constantemente aprendo cosas nuevas para mejorar mis habilidades.",
+            "projectsList": {
+                "factcil": "Una aplicación web desarrollada con React y Django para trabajadores independientes con la cual pueden solicitar anticipos de pagos y controlar sus finanzas.",
+                "discordBot": "Un proyecto personal aún en desarrollo de un bot para Discord desarrollado sobre Node JS, utilizando DiscordJS, TypeScript, y MongoDB.",
+                "asodatos": "Un proyecto fintech desarrollado con React y Django. A través de esta plataforma se puede gestionar las solicitudes de créditos de los usuarios así como sus cuotas."
+            }
         },
         "about": {
             "title": "Sobre mi",
-            "description": "Breve descripción de mi persona"
+            "location": "Resido en Colombia",
+            "myDescription": "Soy un desarrollador apasionado que aprende constantemente para perfeccionar sus habilidades y compartir conocimientos con los demás."
         },
         "contact": {
             "title": "Contacto",
             "description": "Mas información sobre como contactarme"
         },
-        "footer": "Hecho con Qwik"
+        "footer": {
+            "resources": "Recursos",
+            "contact": "Contáctame"
+        }
     }
 }

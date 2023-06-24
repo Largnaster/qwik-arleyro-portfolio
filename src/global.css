@@ -224,6 +224,12 @@
     }
   }
   /* icon styles */
+  footer > .links {
+    @apply flex flex-wrap justify-between items-start px-56 mb-8;
+  }
+  footer > div > div > ul > li > a {
+    @apply hover:underline-offset-2 hover:underline;
+  }
   .icon {
     @apply mr-2 w-5 h-5 items-center inline-block;
   }
@@ -266,5 +272,8 @@ html {
 @media (max-width: 640px) {
   .container {
     @apply px-4;
+  }
+  footer > .links {
+    @apply px-4 flex-col justify-start items-center flex-wrap;
   }
 }

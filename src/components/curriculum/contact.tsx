@@ -6,7 +6,7 @@ export default component$(() => {
 
   return (
     <div>
-      <h2>Contact.</h2>
+      <h2>{t("app.contact.title")}</h2>
       <div>
         <p>{t("app.contact.description")}</p>
       </div>
