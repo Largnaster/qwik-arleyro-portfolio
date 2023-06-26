@@ -1,14 +1,39 @@
-import { component$, useStore } from "@builder.io/qwik";
+import { Fragment, JSXNode, component$, useStore } from "@builder.io/qwik";
 import { useTranslate } from "qwik-speak";
 import Card from "../common/Card/Card";
+import Chip from "../common/Chip";
+
+interface ProjectInfo {
+  name: string;
+  description: string;
+  technologies?: JSXNode;
+}
+
+interface TechnologiesChipProps {
+  technologies: string[];
+}
+const TechnologiesChip = component$<TechnologiesChipProps>(
+  ({ technologies }) => {
+    return (
+      <Fragment>
+        {technologies.map((technology) => (
+          <Chip key={`technologies_chip_${technology}`} text={technology} />
+        ))}
+      </Fragment>
+    );
+  }
+);
 
 export default component$(() => {
   const t = useTranslate();
 
-  const projectsList = useStore([
+  const projectsList = useStore<ProjectInfo[]>([
     {
       name: "Factcil",
-      description: t("app.work.projectsList.factcil")
+      description: t("app.work.projectsList.factcil"),
+      technologies: (
+        <TechnologiesChip technologies={["React", "TypeScript", "Firebase"]} />
+      )
     },
     {
       name: "Discord Bot",
@@ -35,6 +60,11 @@ export default component$(() => {
               key={`project_card_${project.name}`}
               title={project.name}
               description={project.description}
+              footerItems={
+                project.technologies
+                  ? [{ name: project.name, component: project.technologies }]
+                  : []
+              }
             />
           ))}
         </div>

@@ -104,6 +104,9 @@
   footer > div > div > ul > li > a {
     @apply hover:underline-offset-2 hover:underline;
   }
+  hr {
+    @apply border-muted-foreground my-3;
+  }
   /* Custom styles inspired by shadcn and material */
   /* Button styles */
   button,
