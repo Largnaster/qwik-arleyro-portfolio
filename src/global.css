@@ -107,6 +107,9 @@
   hr {
     @apply border-muted-foreground my-3;
   }
+  img {
+    @apply max-w-full h-auto m-0 p-0 overflow-hidden;
+  }
   /* Custom styles inspired by shadcn and material */
   /* Button styles */
   button,
@@ -269,6 +272,9 @@
   .card-container {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-center items-start mt-4;
   }
+  .technology-icon {
+    @apply w-14 h-14;
+  }
 }
 
 html {
@@ -287,5 +293,11 @@ html {
   }
   footer > .links {
     @apply px-4 flex-col justify-start items-center flex-wrap;
+  }
+  .button-group {
+    @apply flex-col space-x-0 space-y-4;
+  }
+  .technology-icon {
+    @apply w-10 h-10;
   }
 }
