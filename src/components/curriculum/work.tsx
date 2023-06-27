@@ -1,25 +1,43 @@
-import { Fragment, JSXNode, component$, useStore } from "@builder.io/qwik";
+import { Fragment, component$, useStore } from "@builder.io/qwik";
 import { useTranslate } from "qwik-speak";
 import Card from "../common/Card/Card";
-import Chip from "../common/Chip";
 
 interface ProjectInfo {
   name: string;
   description: string;
-  technologies?: JSXNode;
+  technologies?: {
+    technologyName: string;
+    iconPath: string;
+  }[];
 }
 
-interface TechnologiesChipProps {
-  technologies: string[];
-}
-const TechnologiesChip = component$<TechnologiesChipProps>(
+interface TechnologiesChipProps
+  extends Required<Pick<ProjectInfo, "technologies">> {}
+
+const TechnologiesChipGroup = component$<TechnologiesChipProps>(
   ({ technologies }) => {
+    if (technologies.length === 0) {
+      return null;
+    }
+
     return (
-      <Fragment>
+      <div class="button-group space-x-1">
         {technologies.map((technology) => (
-          <Chip key={`technologies_chip_${technology}`} text={technology} />
+          <div
+            key={`technology_title_${technology.technologyName}`}
+            class="flex flex-col justify-center items-center"
+          >
+            <img
+              class="technology-icon"
+              src={technology.iconPath}
+              alt={technology.technologyName}
+              width={""}
+              height={""}
+            />
+            <h6 class="m-1">{technology.technologyName}</h6>
+          </div>
         ))}
-      </Fragment>
+      </div>
     );
   }
 );
@@ -31,9 +49,16 @@ export default component$(() => {
     {
       name: "Factcil",
       description: t("app.work.projectsList.factcil"),
-      technologies: (
-        <TechnologiesChip technologies={["React", "TypeScript", "Firebase"]} />
-      )
+      technologies: [
+        {
+          technologyName: "React",
+          iconPath: "/images/react-icon.svg"
+        },
+        {
+          technologyName: "TypeScript",
+          iconPath: "/images/typescript-icon.svg"
+        }
+      ]
     },
     {
       name: "Discord Bot",
@@ -60,12 +85,18 @@ export default component$(() => {
               key={`project_card_${project.name}`}
               title={project.name}
               description={project.description}
-              footerItems={
-                project.technologies
-                  ? [{ name: project.name, component: project.technologies }]
-                  : []
-              }
-            />
+            >
+              <div q:slot="card-footer" class="card-footer">
+                {project.technologies && (
+                  <Fragment>
+                    <hr />
+                    <TechnologiesChipGroup
+                      technologies={project.technologies}
+                    />
+                  </Fragment>
+                )}
+              </div>
+            </Card>
           ))}
         </div>
       </div>
