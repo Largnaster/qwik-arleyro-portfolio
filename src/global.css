@@ -14,6 +14,7 @@
     --popover-foreground: 222.2 47.4% 11.2%;
 
     --card: 293 100% 98%;
+    --card-high: 280 17% 90%;
     --card-foreground: 255 7% 11%;
 
     --border: 214.3 31.8% 91.4%;
@@ -47,6 +48,7 @@
     --popover-foreground: 215 20.2% 65.1%;
 
     --card: 270 5% 23%;
+    --card-high: 257 5% 25%;
     --card-foreground: 312 9% 89%;
 
     --border: 216 34% 17%;
@@ -250,6 +252,9 @@
   /* Class styles */
   .card {
     @apply bg-card text-card-foreground overflow-hidden rounded-lg shadow-lg py-4 px-6;
+  }
+  .tech-card {
+    @apply text-card-foreground overflow-hidden shadow-lg py-4 flex flex-col justify-center items-center bg-card-high px-4 rounded-md;
   }
   .chip {
     @apply bg-card text-card-foreground overflow-hidden rounded-lg shadow-lg py-1 px-2;

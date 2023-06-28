@@ -2,13 +2,14 @@ import { Fragment, component$, useStore } from "@builder.io/qwik";
 import { useTranslate } from "qwik-speak";
 import Card from "../common/Card/Card";
 
+interface Technology {
+  technologyName: string;
+  iconPath: string;
+}
 interface ProjectInfo {
   name: string;
   description: string;
-  technologies?: {
-    technologyName: string;
-    iconPath: string;
-  }[];
+  technologies?: Technology[];
 }
 
 interface TechnologiesChipProps
@@ -21,11 +22,11 @@ const TechnologiesChipGroup = component$<TechnologiesChipProps>(
     }
 
     return (
-      <div class="button-group space-x-1">
+      <div class="button-group">
         {technologies.map((technology) => (
           <div
             key={`technology_title_${technology.technologyName}`}
-            class="flex flex-col justify-center items-center"
+            class="tech-card"
           >
             <img
               class="technology-icon"
@@ -34,7 +35,7 @@ const TechnologiesChipGroup = component$<TechnologiesChipProps>(
               width={""}
               height={""}
             />
-            <h6 class="m-1">{technology.technologyName}</h6>
+            <p class="muted">{technology.technologyName}</p>
           </div>
         ))}
       </div>
@@ -42,6 +43,40 @@ const TechnologiesChipGroup = component$<TechnologiesChipProps>(
   }
 );
 
+type TechnologiesHashMapType = {
+  [key: string]: Technology;
+};
+
+const technologiesHashMap: TechnologiesHashMapType = {
+  react: {
+    technologyName: "React",
+    iconPath: "/images/react-icon.svg"
+  },
+  typescript: {
+    technologyName: "TypeScript",
+    iconPath: "/images/typescript-icon.svg"
+  },
+  discordjs: {
+    technologyName: "Discord.js",
+    iconPath: "/images/discordjs-logo.png"
+  },
+  django: {
+    technologyName: "Django",
+    iconPath: "/images/django-icon.svg"
+  },
+  nodejs: {
+    technologyName: "Node.js",
+    iconPath: "/images/nodejs-icon.svg"
+  },
+  postgresql: {
+    technologyName: "PostgreSQL",
+    iconPath: "/images/postgresql-icon.svg"
+  },
+  vite: {
+    technologyName: "Vite",
+    iconPath: "/images/vite-icon.svg"
+  }
+};
 export default component$(() => {
   const t = useTranslate();
 
@@ -50,23 +85,31 @@ export default component$(() => {
       name: "Factcil",
       description: t("app.work.projectsList.factcil"),
       technologies: [
-        {
-          technologyName: "React",
-          iconPath: "/images/react-icon.svg"
-        },
-        {
-          technologyName: "TypeScript",
-          iconPath: "/images/typescript-icon.svg"
-        }
+        technologiesHashMap["react"],
+        technologiesHashMap["django"],
+        technologiesHashMap["typescript"],
+        technologiesHashMap["postgresql"]
       ]
     },
     {
       name: "Discord Bot",
-      description: t("app.work.projectsList.discordBot")
+      description: t("app.work.projectsList.discordBot"),
+      technologies: [
+        technologiesHashMap["discordjs"],
+        technologiesHashMap["nodejs"],
+        technologiesHashMap["typescript"]
+      ]
     },
     {
       name: "Asodatos",
-      description: t("app.work.projectsList.asodatos")
+      description: t("app.work.projectsList.asodatos"),
+      technologies: [
+        technologiesHashMap["react"],
+        technologiesHashMap["django"],
+        technologiesHashMap["postgresql"],
+        technologiesHashMap["vite"],
+        technologiesHashMap["typescript"]
+      ]
     }
   ]);
 

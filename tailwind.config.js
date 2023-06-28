@@ -45,6 +45,7 @@ module.exports = {
         },
         card: {
           DEFAULT: "hsl(var(--card))",
+          high: "hsl(var(--card-high))",
           foreground: "hsl(var(--card-foreground))"
         }
       },
