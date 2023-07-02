@@ -7,7 +7,9 @@
         "introduction": {
             "title": "Bryann Torres",
             "subtitle": "Desarrollador full stack",
-            "aboutMe": "¡Hola! Soy Bryann Torres, un desarrollador Full Stack con un año de experiencia en la industria tecnológica. Mi experiencia abarca tecnologías como React, Django, TypeScript, Python, Postgres y JavaScript. En mi rol actual, he estado manteniendo y desarrollando aplicaciones web, atendiendo las necesidades de los clientes y compartiendo conocimientos con mi equipo."
+            "aboutMe": "¡Hola! Soy Bryann Torres, un desarrollador Full Stack con un año de experiencia en la industria tecnológica. Mi experiencia abarca tecnologías como React, Django, TypeScript, Python, Postgres y JavaScript. En mi rol actual, he estado manteniendo y desarrollando aplicaciones web, atendiendo las necesidades de los clientes y compartiendo conocimientos con mi equipo.",
+            "frameworks": "Librerías y frameworks",
+            "tools": "Herramientas y plataformas"
         },
         "work": {
             "title": "Experiencia laboral",
@@ -15,9 +17,9 @@
             "experience": "He trabajado tanto para una empresa de desarrollo de software como también en proyectos personales, los cuales me han permitido aprender y mejorar mis habilidades como desarrollador. A continuación, se encuentran algunos de los proyectos más importantes en los que he trabajado:",
             "myWork": "Como desarrollador Full Stack, mi trabajo involucra principalmente el uso de React, TypeScript y Django. Valoro el trabajo en equipo, comparto conocimientos con mis compañeros de trabajo y constantemente aprendo cosas nuevas para mejorar mis habilidades.",
             "projectsList": {
-                "factcil": "Una aplicación web desarrollada con React y Django para trabajadores independientes con la cual pueden solicitar anticipos de pagos y controlar sus finanzas.",
-                "discordBot": "Un proyecto personal aún en desarrollo de un bot para Discord desarrollado sobre Node JS, utilizando DiscordJS, TypeScript, y MongoDB.",
-                "asodatos": "Un proyecto fintech desarrollado con React y Django. A través de esta plataforma se puede gestionar las solicitudes de créditos de los usuarios así como sus cuotas."
+                "factcil": "Una aplicación web para trabajadores independientes con la cual pueden solicitar anticipos de pagos y controlar sus finanzas.",
+                "discordBot": "Un proyecto personal aún en desarrollo de un bot para Discord, el cual incluirá un juego de cartas que podrá ser jugado a través del chat.",
+                "asodatos": "Una aplicación web para una fintech, a través de esta plataforma se puede gestionar las solicitudes de créditos de los usuarios así como sus cuotas."
             }
         },
         "about": {

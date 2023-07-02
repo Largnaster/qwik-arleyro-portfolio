@@ -7,7 +7,9 @@
         "introduction": {
             "title": "Bryann Torres",
             "subtitle": "Full stack developer",
-            "aboutMe": "Hello! I'm Bryann Torres, a Full Stack Developer with a year's experience in the tech industry. My expertise spans technologies such as React, Django, TypeScript, Python, Postgres, and JavaScript. In my current role, I've been successfully maintaining and developing web applications, addressing client needs and sharing knowledge with my team."
+            "aboutMe": "Hello! I'm Bryann Torres, a Full Stack Developer with a year's experience in the tech industry. My expertise spans technologies such as React, Django, TypeScript, Python, Postgres, and JavaScript. In my current role, I've been successfully maintaining and developing web applications, addressing client needs and sharing knowledge with my team.",
+            "frameworks": "Libraries and frameworks",
+            "tools": "Tools and platforms"
         },
         "work": {
             "title": "Work experience",
@@ -15,9 +17,9 @@
             "experience": "I have worked both for a software development company and also on personal projects, which have allowed me to learn and improve my skills as a developer. Below are some of the most important projects I have worked on:",
             "myWork": "As a full stack developer, my work primarily involves using React TypeScript and Django. I value teamwork, readily share knowledge with my colleagues, and consistently learn new things to enhance my skills.",
             "projectsList": {
-                "factcil": "A web application developed with React and Django for freelancers with which they can request advance payments and control their finances.",
-                "discordBot": "A personal project still under development of a Discord bot developed on top of Node JS, using DiscordJS, TypeScript, and MongoDB.",
-                "asodatos": "A fintech project developed with React and Django. Through this platform it is possible to manage users' credit applications as well as their installments."
+                "factcil": "A web application for freelancers with which they can request advance payments and control their finances.",
+                "discordBot": "This is a personal project of a Discord bot still under development, which will include a card game that can be played in the chat.",
+                "asodatos": "This is a web application for a fintech, through this platform it is possible to manage users' credit applications as well as their installments."
             }
         },
         "about": {

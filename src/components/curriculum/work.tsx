@@ -22,7 +22,7 @@ const TechnologiesChipGroup = component$<TechnologiesChipProps>(
     }
 
     return (
-      <div class="button-group">
+      <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {technologies.map((technology) => (
           <div
             key={`technology_title_${technology.technologyName}`}
@@ -75,6 +75,10 @@ const technologiesHashMap: TechnologiesHashMapType = {
   vite: {
     technologyName: "Vite",
     iconPath: "/images/vite-icon.svg"
+  },
+  mongodb: {
+    technologyName: "MongoDB",
+    iconPath: "/images/mongodb-icon.svg"
   }
 };
 export default component$(() => {
@@ -96,6 +100,7 @@ export default component$(() => {
       description: t("app.work.projectsList.discordBot"),
       technologies: [
         technologiesHashMap["discordjs"],
+        technologiesHashMap["mongodb"],
         technologiesHashMap["nodejs"],
         technologiesHashMap["typescript"]
       ]
@@ -129,7 +134,7 @@ export default component$(() => {
               title={project.name}
               description={project.description}
             >
-              <div q:slot="card-footer" class="card-footer">
+              <div q:slot="card-footer">
                 {project.technologies && (
                   <Fragment>
                     <hr />

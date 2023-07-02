@@ -8,22 +8,13 @@ export default component$(() => {
   const t = useTranslate();
 
   const technologiesList = useStore([
-    {
-      name: "React"
-    },
-    {
-      name: "TypeScript"
-    },
-    {
-      name: "Python"
-    },
-    {
-      name: "Django"
-    },
-    {
-      name: "Postgres"
-    }
+    "React",
+    "Django",
+    "Postgres",
+    "Python",
+    "TypeScript"
   ]);
+  const toolsList = useStore(["Git", "GitHub", "VSCode", "Docker", "Linux"]);
   return (
     <div>
       <div class="text-center flex flex-col space-y-2 pb-4">
@@ -55,12 +46,16 @@ export default component$(() => {
       </div>
       <div>
         <p>{t("app.introduction.aboutMe")}</p>
+        <p class="lead pb-4">{t("app.introduction.frameworks")}</p>
         <div class="button-group">
           {technologiesList.map((technology) => (
-            <Chip
-              key={`technology_chip_${technology.name}`}
-              text={technology.name}
-            />
+            <Chip key={`technology_chip_${technology}`} text={technology} />
+          ))}
+        </div>
+        <p class="lead pb-4">{t("app.introduction.tools")}</p>
+        <div class="button-group">
+          {toolsList.map((tool) => (
+            <Chip key={`technology_chip_${tool}`} text={tool} />
           ))}
         </div>
       </div>
