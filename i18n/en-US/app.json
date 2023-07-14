@@ -4,6 +4,9 @@
         "nav": {
             "home": "Home"
         },
+        "common": {
+            "present": "Present"
+        },
         "introduction": {
             "title": "Bryann Torres",
             "subtitle": "Full stack developer",
@@ -14,12 +17,15 @@
         "work": {
             "title": "Work experience",
             "projects": "Projects",
-            "experience": "I have worked both for a software development company and also on personal projects, which have allowed me to learn and improve my skills as a developer. Below are some of the most important projects I have worked on:",
+            "experience": "I have worked both for a software development company and also on personal projects, which have allowed me to learn and improve my skills as a developer. Below are some of the personal projects I have worked on:",
             "myWork": "As a full stack developer, my work primarily involves using React TypeScript and Django. I value teamwork, readily share knowledge with my colleagues, and consistently learn new things to enhance my skills.",
+            "worksList": {
+                "iComm": "As a full stack software developer, I have been working on the development and maintenance of web applications using React with TypeScript and Django as the main stack.",
+                "iCommStartDate": "August 2022"
+            },
             "projectsList": {
-                "factcil": "A web application for freelancers with which they can request advance payments and control their finances.",
                 "discordBot": "This is a personal project of a Discord bot still under development, which will include a card game that can be played in the chat.",
-                "asodatos": "This is a web application for a fintech, through this platform it is possible to manage users' credit applications as well as their installments."
+                "constellations": "This is a personal project of a web application that allows you to see the constellations of the zodiac and their characteristics with a 3D view of the sky."
             }
         },
         "about": {

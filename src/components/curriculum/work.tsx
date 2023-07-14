@@ -8,6 +8,8 @@ interface Technology {
 }
 interface ProjectInfo {
   name: string;
+  startDate?: string;
+  endDate?: string;
   description: string;
   technologies?: Technology[];
 }
@@ -86,16 +88,6 @@ export default component$(() => {
 
   const projectsList = useStore<ProjectInfo[]>([
     {
-      name: "Factcil",
-      description: t("app.work.projectsList.factcil"),
-      technologies: [
-        technologiesHashMap["react"],
-        technologiesHashMap["django"],
-        technologiesHashMap["typescript"],
-        technologiesHashMap["postgresql"]
-      ]
-    },
-    {
       name: "Discord Bot",
       description: t("app.work.projectsList.discordBot"),
       technologies: [
@@ -106,14 +98,22 @@ export default component$(() => {
       ]
     },
     {
-      name: "Asodatos",
-      description: t("app.work.projectsList.asodatos"),
+      name: "Constellations",
+      description: t("app.work.projectsList.constellations")
+    }
+  ]);
+
+  const worksList = useStore<ProjectInfo[]>([
+    {
+      name: "I-comm Solutions SAS",
+      startDate: t("app.work.worksList.iCommStartDate"),
+      description: t("app.work.worksList.iComm"),
       technologies: [
         technologiesHashMap["react"],
         technologiesHashMap["django"],
+        technologiesHashMap["typescript"],
         technologiesHashMap["postgresql"],
-        technologiesHashMap["vite"],
-        technologiesHashMap["typescript"]
+        technologiesHashMap["vite"]
       ]
     }
   ]);
@@ -123,6 +123,28 @@ export default component$(() => {
       <h2>{t("app.work.title")}</h2>
       <div>
         <p>{t("app.work.myWork")}</p>
+        <div class="card-container">
+          {worksList.map((work) => (
+            <Card
+              key={`work_card_${work.name}`}
+              title={work.name}
+              subtitle={
+                work.startDate &&
+                `${work.startDate} - ${work.endDate ?? t("app.common.present")}`
+              }
+              description={work.description}
+            >
+              <div q:slot="card-footer">
+                {work.technologies && (
+                  <Fragment>
+                    <hr />
+                    <TechnologiesChipGroup technologies={work.technologies} />
+                  </Fragment>
+                )}
+              </div>
+            </Card>
+          ))}
+        </div>
         <p>{t("app.work.experience")}</p>
       </div>
       <div>

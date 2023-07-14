@@ -4,6 +4,9 @@
         "nav": {
             "home": "Inicio"
         },
+        "common": {
+            "present": "Presente"
+        },
         "introduction": {
             "title": "Bryann Torres",
             "subtitle": "Desarrollador full stack",
@@ -14,12 +17,15 @@
         "work": {
             "title": "Experiencia laboral",
             "projects": "Proyectos",
-            "experience": "He trabajado tanto para una empresa de desarrollo de software como también en proyectos personales, los cuales me han permitido aprender y mejorar mis habilidades como desarrollador. A continuación, se encuentran algunos de los proyectos más importantes en los que he trabajado:",
+            "experience": "He trabajado tanto para una empresa de desarrollo de software como también en proyectos personales, los cuales me han permitido aprender y mejorar mis habilidades como desarrollador. A continuación, se encuentran algunos de los proyectos personales en los que he trabajado:",
             "myWork": "Como desarrollador Full Stack, mi trabajo involucra principalmente el uso de React, TypeScript y Django. Valoro el trabajo en equipo, comparto conocimientos con mis compañeros de trabajo y constantemente aprendo cosas nuevas para mejorar mis habilidades.",
+            "worksList": {
+                "iComm": "Como desarrollador full stack, he trabajado en el desarrollo y mantenimiento de aplicaciones web utilizando React con TypeScript y Django como stack principal.",
+                "iCommStartDate": "Agosto 2022"
+            },
             "projectsList": {
-                "factcil": "Una aplicación web para trabajadores independientes con la cual pueden solicitar anticipos de pagos y controlar sus finanzas.",
                 "discordBot": "Un proyecto personal aún en desarrollo de un bot para Discord, el cual incluirá un juego de cartas que podrá ser jugado a través del chat.",
-                "asodatos": "Una aplicación web para una fintech, a través de esta plataforma se puede gestionar las solicitudes de créditos de los usuarios así como sus cuotas."
+                "constellations": "Este es un proyecto personal de una aplicación web que permite ver las constelaciones del zodiaco y sus características con una vista 3D del cielo."
             }
         },
         "about": {
