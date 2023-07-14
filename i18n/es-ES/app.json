@@ -31,7 +31,8 @@
         "about": {
             "title": "Sobre mi",
             "location": "Resido en Colombia",
-            "myDescription": "Soy un desarrollador apasionado que aprende constantemente para perfeccionar sus habilidades y compartir conocimientos con los demás."
+            "firstDescription": "Me considero una persona que siempre está aprendiendo y tiene facilidad para adquirir nuevos talentos. Puedo conversar con confianza en inglés a un nivel B2 y me desenvuelvo bien en entornos de equipo. ¿El estrés? Lo tengo bajo control y lo convierto en un catalizador de la productividad. Siempre me ha intrigado la programación y quiero aprender más sobre ella.",
+            "secondDescription": "Cuando no estoy trabajando o aprendiendo, probablemente me encontrarás inmerso en alguna de mis aficiones. Juego mucho a videojuegos, y a menudo se me puede encontrar jugando en mi ordenador. Mi gusto musical es de lo más variado. Me gusta cocinar, aunque no lo hago todos los días, y el anime es mi vía de escape, un mundo que me encanta explorar en mis ratos libres."
         },
         "contact": {
             "title": "Contacto",
