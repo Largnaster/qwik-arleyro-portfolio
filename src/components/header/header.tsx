@@ -1,6 +1,6 @@
 import { component$, useContext, useVisibleTask$, $ } from "@builder.io/qwik";
-import { Link, useLocation } from "@builder.io/qwik-city";
-import { useSpeakConfig, useSpeakLocale, useTranslate } from "qwik-speak";
+import { useLocation } from "@builder.io/qwik-city";
+import { useSpeakConfig, useTranslate } from "qwik-speak";
 import { ChangeLocale } from "../change-locale/change-locale";
 import { ThemeContext } from "~/root";
 import { Button } from "../common/Button";
@@ -10,14 +10,14 @@ export const Header = component$(() => {
   const t = useTranslate();
 
   const pathname = useLocation().url.pathname;
-  const lang = useSpeakLocale().lang;
+  // const lang = useSpeakLocale().lang;
   const config = useSpeakConfig();
 
   const theme = useContext(ThemeContext);
 
-  const getHref = (name: string) => {
-    return lang === config.defaultLocale.lang ? name : `/${lang}${name}`;
-  };
+  // const getHref = (name: string) => {
+  //   return lang === config.defaultLocale.lang ? name : `/${lang}${name}`;
+  // };
 
   useVisibleTask$(({ track }) => {
     track(theme);
@@ -33,21 +33,31 @@ export const Header = component$(() => {
     <header class="header">
       <ul class="nav-menu-item">
         <li>
-          <Link
-            href={getHref("/")}
-            class={{
-              active:
-                pathname === "/" ||
-                config.supportedLocales.some((locale) =>
-                  pathname.endsWith(`${locale.lang}/`)
-                )
-            }}
-          >
+          <a href="#introduction">
             <div class="flex items-center flex-nowrap">
               <LuHome class="icon nav" />
               {t("app.nav.home")}
             </div>
-          </Link>
+          </a>
+        </li>
+        <li>
+          <a href="#work">
+            <div class="flex items-center flex-nowrap">{t("app.nav.work")}</div>
+          </a>
+        </li>
+        <li>
+          <a href="#about">
+            <div class="flex items-center flex-nowrap">
+              {t("app.nav.about")}
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <div class="flex items-center flex-nowrap">
+              {t("app.nav.contact")}
+            </div>
+          </a>
         </li>
       </ul>
       <div class="button-group">

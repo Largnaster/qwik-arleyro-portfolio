@@ -2,7 +2,10 @@
     "app": {
         "changeLocale": "Cambiar idioma",
         "nav": {
-            "home": "Inicio"
+            "home": "Inicio",
+            "work": "Experiencia",
+            "about": "Sobre mi",
+            "contact": "Contacto"
         },
         "common": {
             "present": "Presente"

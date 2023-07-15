@@ -1,6 +1,7 @@
 import { Fragment, component$, useStore } from "@builder.io/qwik";
 import { useTranslate } from "qwik-speak";
 import Card from "../common/Card/Card";
+import { LuExternalLink } from "@qwikest/icons/lucide";
 
 interface Technology {
   technologyName: string;
@@ -12,6 +13,7 @@ interface ProjectInfo {
   endDate?: string;
   description: string;
   technologies?: Technology[];
+  url?: string;
 }
 
 interface TechnologiesChipProps
@@ -114,12 +116,13 @@ export default component$(() => {
         technologiesHashMap["typescript"],
         technologiesHashMap["postgresql"],
         technologiesHashMap["vite"]
-      ]
+      ],
+      url: "https://i-comm.co/"
     }
   ]);
 
   return (
-    <div>
+    <div id="work">
       <h2>{t("app.work.title")}</h2>
       <div>
         <p>{t("app.work.myWork")}</p>
@@ -127,13 +130,18 @@ export default component$(() => {
           {worksList.map((work) => (
             <Card
               key={`work_card_${work.name}`}
-              title={work.name}
               subtitle={
                 work.startDate &&
                 `${work.startDate} - ${work.endDate ?? t("app.common.present")}`
               }
               description={work.description}
             >
+              <div q:slot="card-title" class="flex flex-row items-center gap-1">
+                <h3>
+                  <a href={work.url}>{work.name}</a>
+                </h3>
+                <LuExternalLink class="h-[1.3rem] w-[1.3rem]" />
+              </div>
               <div q:slot="card-footer">
                 {work.technologies && (
                   <Fragment>

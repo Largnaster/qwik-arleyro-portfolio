@@ -19,7 +19,7 @@ export default component$(() => {
   ]);
 
   return (
-    <div>
+    <div id="about">
       <h2>{t("app.about.title")}</h2>
       <div>
         <div class="large">{t("app.about.location")}</div>

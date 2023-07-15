@@ -16,7 +16,7 @@ export default component$(() => {
   ]);
   const toolsList = useStore(["Git", "GitHub", "VSCode", "Docker", "Linux"]);
   return (
-    <div>
+    <div id="introduction">
       <div class="text-center flex flex-col space-y-2 pb-4">
         <h1>{t("app.introduction.title")}</h1>
         <h3>{t("app.introduction.subtitle")}</h3>

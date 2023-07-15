@@ -5,7 +5,7 @@ export default component$(() => {
   const t = useTranslate();
 
   return (
-    <div>
+    <div id="contact">
       <h2>{t("app.contact.title")}</h2>
       <div>
         <p>{t("app.contact.description")}</p>
