@@ -101,7 +101,8 @@ export default component$(() => {
     },
     {
       name: "Constellations",
-      description: t("app.work.projectsList.constellations")
+      description: t("app.work.projectsList.constellations"),
+      url: "https://constellations-vr.vercel.app/"
     }
   ]);
 
@@ -138,7 +139,9 @@ export default component$(() => {
             >
               <div q:slot="card-title" class="flex flex-row items-center gap-1">
                 <h3>
-                  <a href={work.url}>{work.name}</a>
+                  <a href={work.url} target="_blank" rel="noreferrer">
+                    {work.name}
+                  </a>
                 </h3>
                 <LuExternalLink class="h-[1.3rem] w-[1.3rem]" />
               </div>
@@ -161,9 +164,22 @@ export default component$(() => {
           {projectsList.map((project) => (
             <Card
               key={`project_card_${project.name}`}
-              title={project.name}
               description={project.description}
             >
+              <div q:slot="card-title" class="flex flex-row items-center gap-1">
+                <h3>
+                  {project.url ? (
+                    <a href={project.url} target="_blank" rel="noreferrer">
+                      {project.name}
+                    </a>
+                  ) : (
+                    project.name
+                  )}
+                </h3>
+                {project.url && (
+                  <LuExternalLink class="h-[1.3rem] w-[1.3rem]" />
+                )}
+              </div>
               <div q:slot="card-footer">
                 {project.technologies && (
                   <Fragment>
