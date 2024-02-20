@@ -1,6 +1,11 @@
 import { $, component$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
-import { useDisplayName, useSpeakConfig, useSpeakLocale } from "qwik-speak";
+import {
+  localizePath,
+  useDisplayName,
+  useSpeakConfig,
+  useSpeakLocale
+} from "qwik-speak";
 
 import type { SpeakLocale } from "qwik-speak";
 import { Button } from "../common/Button";
@@ -12,21 +17,12 @@ export const ChangeLocale = component$(() => {
 
   const locale = useSpeakLocale();
   const config = useSpeakConfig();
+  const getPath = $(localizePath());
 
-  const navigateByLocale$ = $((newLocale: SpeakLocale) => {
-    const url = new URL(location.href);
-    if (loc.params.lang) {
-      if (newLocale.lang !== config.defaultLocale.lang) {
-        url.pathname = url.pathname.replace(loc.params.lang, newLocale.lang);
-      } else {
-        url.pathname = url.pathname.replace(
-          new RegExp(`(/${loc.params.lang}/)|(/${loc.params.lang}$)`),
-          "/"
-        );
-      }
-    } else if (newLocale.lang !== config.defaultLocale.lang) {
-      url.pathname = `/${newLocale.lang}${url.pathname}`;
-    }
+  const navigateByLocale$ = $(async (newLocale: SpeakLocale) => {
+    const url = loc.url;
+    const newPath = await getPath([url.pathname], newLocale.lang);
+    url.pathname = newPath[0];
 
     location.href = url.toString();
   });

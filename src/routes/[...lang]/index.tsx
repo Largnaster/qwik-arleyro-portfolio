@@ -1,17 +1,12 @@
-import { Fragment, component$ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Speak } from "qwik-speak";
+import { useSpeak } from "qwik-speak";
 
 import Hero from "~/components/curriculum/curriculum";
 
 export default component$(() => {
-  return (
-    <Fragment>
-      <Speak assets={["app"]}>
-        <Hero />
-      </Speak>
-    </Fragment>
-  );
+  useSpeak({ runtimeAssets: ["app"] });
+  return <Hero />;
 });
 
 export const head: DocumentHead = {

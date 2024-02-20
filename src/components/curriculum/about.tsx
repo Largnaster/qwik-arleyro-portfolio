@@ -1,9 +1,9 @@
 import { component$, useStore } from "@builder.io/qwik";
-import { useTranslate } from "qwik-speak";
+import { inlineTranslate } from "qwik-speak";
 import Chip from "../common/Chip";
 
 export default component$(() => {
-  const t = useTranslate();
+  const t = inlineTranslate();
 
   const ideasList = useStore([
     "English",

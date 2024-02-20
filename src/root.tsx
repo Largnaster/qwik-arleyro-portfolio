@@ -6,7 +6,7 @@ import {
   useContextProvider,
   useVisibleTask$
 } from "@builder.io/qwik";
-import { QwikSpeakProvider } from "qwik-speak";
+import { useQwikSpeak } from "qwik-speak";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -25,6 +25,8 @@ export default component$(() => {
 
   const theme = useSignal(defaultTheme);
 
+  useQwikSpeak({ config, translationFn });
+
   useVisibleTask$(() => {
     const hasDarkModeSelected =
       localStorage.theme === "dark" ||
@@ -36,18 +38,16 @@ export default component$(() => {
   useContextProvider(ThemeContext, theme);
 
   return (
-    <QwikSpeakProvider config={config} translationFn={translationFn}>
-      <QwikCityProvider>
-        <head>
-          <meta charSet="utf-8" />
-          <link rel="manifest" href="/manifest.json" />
-          <RouterHead />
-        </head>
-        <body class={theme}>
-          <RouterOutlet />
-          <ServiceWorkerRegister />
-        </body>
-      </QwikCityProvider>
-    </QwikSpeakProvider>
+    <QwikCityProvider>
+      <head>
+        <meta charSet="utf-8" />
+        <link rel="manifest" href="/manifest.json" />
+        <RouterHead />
+      </head>
+      <body class={theme}>
+        <RouterOutlet />
+        <ServiceWorkerRegister />
+      </body>
+    </QwikCityProvider>
   );
 });

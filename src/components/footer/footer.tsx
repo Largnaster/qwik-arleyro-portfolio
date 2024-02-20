@@ -1,11 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-import { useTranslate } from "qwik-speak";
+import { inlineTranslate } from "qwik-speak";
 import { useServerTimeLoader } from "~/routes/layout";
 
 export default component$(() => {
   const serverTime = useServerTimeLoader();
-  const t = useTranslate();
+  const t = inlineTranslate();
 
   return (
     <footer>

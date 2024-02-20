@@ -1,9 +1,20 @@
 import type { RequestHandler } from "@builder.io/qwik-city";
+import { validateLocale, extractFromDomain } from "qwik-speak";
 
 import { config } from "~/speak-config";
 
-export const onRequest: RequestHandler = ({ params, locale }) => {
-  const lang = params.lang;
+export const onRequest: RequestHandler = ({ params, locale, error, url }) => {
+  let lang: string | undefined = undefined;
 
-  locale(lang ?? config.defaultLocale.lang);
+  if (params.lang && validateLocale(params.lang)) {
+    lang = config.supportedLocales.find((value) => value.lang === lang)?.lang;
+
+    if (!lang) throw error(404, "Not Found");
+  } else {
+    lang =
+      extractFromDomain(url, config.supportedLocales) ??
+      config.defaultLocale.lang;
+  }
+
+  locale(lang);
 };

@@ -1,5 +1,5 @@
 import { Fragment, component$, useStore } from "@builder.io/qwik";
-import { useTranslate } from "qwik-speak";
+import { inlineTranslate } from "qwik-speak";
 import Card from "../common/Card/Card";
 import { LuExternalLink } from "@qwikest/icons/lucide";
 
@@ -36,8 +36,8 @@ const TechnologiesChipGroup = component$<TechnologiesChipProps>(
               class="technology-icon"
               src={technology.iconPath}
               alt={technology.technologyName}
-              width={""}
-              height={""}
+              width={50}
+              height={50}
             />
             <p class="muted">{technology.technologyName}</p>
           </div>
@@ -86,7 +86,7 @@ const technologiesHashMap: TechnologiesHashMapType = {
   }
 };
 export default component$(() => {
-  const t = useTranslate();
+  const t = inlineTranslate();
 
   const projectsList = useStore<ProjectInfo[]>([
     {

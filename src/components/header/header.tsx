@@ -1,14 +1,14 @@
 import { component$, useContext, useVisibleTask$, $ } from "@builder.io/qwik";
 // import { useLocation } from "@builder.io/qwik-city";
 // import { useSpeakConfig, useTranslate } from "qwik-speak";
-import { useTranslate } from "qwik-speak";
+import { inlineTranslate } from "qwik-speak";
 import { ChangeLocale } from "../change-locale/change-locale";
 import { ThemeContext } from "~/root";
 import { Button } from "../common/Button";
 import { LuMoon, LuSun, LuHome } from "@qwikest/icons/lucide";
 
 export const Header = component$(() => {
-  const t = useTranslate();
+  const t = inlineTranslate();
 
   // const pathname = useLocation().url.pathname;
   // const lang = useSpeakLocale().lang;

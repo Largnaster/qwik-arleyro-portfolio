@@ -24,8 +24,8 @@
   "files": [
     "./.eslintrc.cjs",
     "./.prettierrc.cjs",
-    "./postcss.config.js",
+    "./postcss.config.mjs",
     "./tailwind.config.js"
   ],
-  "include": ["src", "./*.d.ts"]
+  "include": ["src", "./*.d.ts", "./*.config.ts", "postcss.config.mjs"]
 }

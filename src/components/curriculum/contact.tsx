@@ -1,8 +1,8 @@
 import { component$ } from "@builder.io/qwik";
-import { useTranslate } from "qwik-speak";
+import { inlineTranslate } from "qwik-speak";
 
 export default component$(() => {
-  const t = useTranslate();
+  const t = inlineTranslate();
 
   return (
     <div id="contact">
