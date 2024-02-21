@@ -19,12 +19,13 @@ export default component$(() => {
     <div id="introduction">
       <div class="text-center flex flex-col space-y-2 pb-4">
         <h1>{t("app.introduction.title")}</h1>
-        <h3>{t("app.introduction.subtitle")}</h3>
+        <h2 class="border-b-0">{t("app.introduction.subtitle")}</h2>
         <div class="button-group justify-center items-center">
           <Link
             class="has-svg"
             href="https://www.linkedin.com/in/arleyro91/"
             target="_blank"
+            aria-label="LinkedIn icon"
           >
             <LuLinkedin class="icon" />
           </Link>
@@ -32,6 +33,7 @@ export default component$(() => {
             class="has-svg"
             href="mailto:arleyro91@gmail.com"
             target="_blank"
+            aria-label="Mail icon"
           >
             <LuMail class="icon" />
           </Link>
@@ -39,6 +41,7 @@ export default component$(() => {
             class="has-svg"
             href="https://github.com/Largnaster"
             target="_blank"
+            aria-label="GitHub icon"
           >
             <LuGithub class="icon" />
           </Link>

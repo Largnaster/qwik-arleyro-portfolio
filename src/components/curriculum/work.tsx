@@ -62,7 +62,7 @@ const technologiesHashMap: TechnologiesHashMapType = {
   },
   discordjs: {
     technologyName: "Discord.js",
-    iconPath: "/images/discordjs-logo.png"
+    iconPath: "/images/discordjs-logo.webp"
   },
   django: {
     technologyName: "Django",
