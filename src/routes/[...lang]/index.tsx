@@ -1,11 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { useSpeak } from "qwik-speak";
-
 import Hero from "~/components/curriculum/curriculum";
 
 export default component$(() => {
-  useSpeak({ runtimeAssets: ["app"] });
   return <Hero />;
 });
 

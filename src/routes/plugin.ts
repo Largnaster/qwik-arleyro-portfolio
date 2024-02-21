@@ -7,7 +7,9 @@ export const onRequest: RequestHandler = ({ params, locale, error, url }) => {
   let lang: string | undefined = undefined;
 
   if (params.lang && validateLocale(params.lang)) {
-    lang = config.supportedLocales.find((value) => value.lang === lang)?.lang;
+    lang = config.supportedLocales.find(
+      (value) => value.lang === params.lang
+    )?.lang;
 
     if (!lang) throw error(404, "Not Found");
   } else {
