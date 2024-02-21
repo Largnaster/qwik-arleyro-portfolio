@@ -4,7 +4,7 @@ import {
   createContextId,
   useSignal,
   useContextProvider,
-  useVisibleTask$
+  useTask$
 } from "@builder.io/qwik";
 import { useQwikSpeak } from "qwik-speak";
 import {
@@ -17,6 +17,7 @@ import { config } from "./speak-config";
 
 import "./global.css";
 import { translationFn } from "./speak-functions";
+import { isBrowser } from "@builder.io/qwik/build";
 
 export const ThemeContext = createContextId<Signal<string>>("theme");
 
@@ -27,12 +28,14 @@ export default component$(() => {
 
   useQwikSpeak({ config, translationFn });
 
-  useVisibleTask$(() => {
-    const hasDarkModeSelected =
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-    theme.value = hasDarkModeSelected ? "dark" : "light";
+  useTask$(() => {
+    if (isBrowser) {
+      const hasDarkModeSelected =
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches);
+      theme.value = hasDarkModeSelected ? "dark" : "light";
+    }
   });
 
   useContextProvider(ThemeContext, theme);

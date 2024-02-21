@@ -1,29 +1,22 @@
-import { component$, useContext, useVisibleTask$, $ } from "@builder.io/qwik";
-// import { useLocation } from "@builder.io/qwik-city";
-// import { useSpeakConfig, useTranslate } from "qwik-speak";
+import { component$, useContext, $, useTask$ } from "@builder.io/qwik";
 import { inlineTranslate } from "qwik-speak";
 import { ChangeLocale } from "../change-locale/change-locale";
 import { ThemeContext } from "~/root";
 import { Button } from "../common/Button";
 import { LuMoon, LuSun, LuHome } from "@qwikest/icons/lucide";
+import { isBrowser } from "@builder.io/qwik/build";
 
 export const Header = component$(() => {
   const t = inlineTranslate();
 
-  // const pathname = useLocation().url.pathname;
-  // const lang = useSpeakLocale().lang;
-  // const config = useSpeakConfig();
-
   const theme = useContext(ThemeContext);
 
-  // const getHref = (name: string) => {
-  //   return lang === config.defaultLocale.lang ? name : `/${lang}${name}`;
-  // };
-
-  useVisibleTask$(({ track }) => {
+  useTask$(({ track }) => {
     track(theme);
 
-    localStorage.theme = theme.value;
+    if (isBrowser) {
+      localStorage.theme = theme.value;
+    }
   });
 
   const handleThemeChange = $(() => {
