@@ -32,8 +32,8 @@ export default component$(() => {
               </Link>
             </li>
             <li>
-              <Link target="_blank" href="https://ui.shadcn.com/">
-                Shadcn
+              <Link target="_blank" href="https://daisyui.com/">
+                DaisyUI
               </Link>
             </li>
             <li>

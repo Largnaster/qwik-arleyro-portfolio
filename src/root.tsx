@@ -4,7 +4,8 @@ import {
   createContextId,
   useSignal,
   useContextProvider,
-  useTask$
+  useTask$,
+  useStyles$
 } from "@builder.io/qwik";
 import { useQwikSpeak } from "qwik-speak";
 import {
@@ -15,14 +16,16 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 import { config } from "./speak-config";
 
-import "./global.css";
+import globalStyles from "./global.css?inline";
 import { translationFn } from "./speak-functions";
 import { isBrowser } from "@builder.io/qwik/build";
 
 export const ThemeContext = createContextId<Signal<string>>("theme");
 
 export default component$(() => {
-  const defaultTheme = "light";
+  useStyles$(globalStyles);
+
+  const defaultTheme = "winter";
 
   const theme = useSignal(defaultTheme);
 
@@ -31,10 +34,10 @@ export default component$(() => {
   useTask$(() => {
     if (isBrowser) {
       const hasDarkModeSelected =
-        localStorage.theme === "dark" ||
+        localStorage.theme === "night" ||
         (!("theme" in localStorage) &&
           window.matchMedia("(prefers-color-scheme: dark)").matches);
-      theme.value = hasDarkModeSelected ? "dark" : "light";
+      theme.value = hasDarkModeSelected ? "night" : "winter";
     }
   });
 
@@ -47,7 +50,7 @@ export default component$(() => {
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
       </head>
-      <body class={theme}>
+      <body data-theme={theme}>
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>

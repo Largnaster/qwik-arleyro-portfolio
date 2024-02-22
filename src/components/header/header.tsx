@@ -20,7 +20,7 @@ export const Header = component$(() => {
   });
 
   const handleThemeChange = $(() => {
-    theme.value = theme.value === "light" ? "dark" : "light";
+    theme.value = theme.value === "winter" ? "night" : "winter";
   });
 
   return (

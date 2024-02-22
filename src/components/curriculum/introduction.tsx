@@ -20,6 +20,7 @@ export default component$(() => {
       <div class="text-center flex flex-col space-y-2 pb-4">
         <h1>{t("app.introduction.title")}</h1>
         <h2 class="border-b-0">{t("app.introduction.subtitle")}</h2>
+        <button class="btn btn-primary">Button</button>
         <div class="button-group justify-center items-center">
           <Link
             class="has-svg"
