@@ -15,8 +15,8 @@ module.exports = {
     base: true,
     styled: true,
     utils: true,
-    prefix: "dui",
+    prefix: "dui-",
     logs: true,
-    themeRoot: "*"
+    themeRoot: ":root"
   }
 };
