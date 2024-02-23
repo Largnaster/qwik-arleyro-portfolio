@@ -1,6 +1,7 @@
 import { $, component$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import {
+  inlineTranslate,
   localizePath,
   useDisplayName,
   useSpeakConfig,
@@ -8,9 +9,9 @@ import {
 } from "qwik-speak";
 
 import type { SpeakLocale } from "qwik-speak";
-import { Button } from "../common/Button";
 
 export const ChangeLocale = component$(() => {
+  const t = inlineTranslate();
   const dn = useDisplayName();
 
   const loc = useLocation();
@@ -28,21 +29,28 @@ export const ChangeLocale = component$(() => {
   });
 
   return (
-    <div class="button-group">
-      {config.supportedLocales.map((langOption) => (
-        <Button
-          key={langOption.lang}
-          onClick$={async () => await navigateByLocale$(langOption)}
-          variant="outlined"
-          disabled={langOption.lang == locale.lang}
-        >
-          {dn(langOption.lang, {
-            type: "language",
-            style: "short",
-            languageDisplay: "standard"
-          })}
-        </Button>
-      ))}
-    </div>
+    <ul class="dui-menu dui-menu-horizontal bg-base-200 dui-rounded-box">
+      <li>
+        <details>
+          <summary>{t("app.selectLocale")}</summary>
+          <ul>
+            {config.supportedLocales.map((langOption) => (
+              <li key={langOption.lang}>
+                <button
+                  class={`dui-btn dui-btn-ghost ${locale.lang === langOption.lang && "dui-btn-disabled"}`}
+                  onClick$={async () => await navigateByLocale$(langOption)}
+                >
+                  {dn(langOption.lang, {
+                    type: "language",
+                    style: "short",
+                    languageDisplay: "standard"
+                  })}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </details>
+      </li>
+    </ul>
   );
 });
