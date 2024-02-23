@@ -19,8 +19,11 @@ import { config } from "./speak-config";
 import globalStyles from "./global.css?inline";
 import { translationFn } from "./speak-functions";
 import { isBrowser } from "@builder.io/qwik/build";
+import { HeaderMenu } from "./components/header/header";
 
 export const ThemeContext = createContextId<Signal<string>>("theme");
+
+export const DrawerIdContext = createContextId<Signal<string>>("drawerId");
 
 export default component$(() => {
   useStyles$(globalStyles);
@@ -28,6 +31,7 @@ export default component$(() => {
   const defaultTheme = "winter";
 
   const theme = useSignal(defaultTheme);
+  const drawerId = useSignal("toggle-drawer");
 
   useQwikSpeak({ config, translationFn });
 
@@ -42,6 +46,7 @@ export default component$(() => {
   });
 
   useContextProvider(ThemeContext, theme);
+  useContextProvider(DrawerIdContext, drawerId);
 
   return (
     <QwikCityProvider>
@@ -51,8 +56,25 @@ export default component$(() => {
         <RouterHead />
       </head>
       <body data-theme={theme}>
-        <RouterOutlet />
-        <ServiceWorkerRegister />
+        <div class="dui-drawer">
+          <input
+            type="checkbox"
+            id={drawerId.value}
+            class="dui-drawer-toggle"
+          />
+          <div class="dui-drawer-content">
+            <RouterOutlet />
+            <ServiceWorkerRegister />
+          </div>
+          <div class="dui-drawer-side">
+            <label
+              for={drawerId.value}
+              class="dui-drawer-overlay"
+              aria-label="close sidebar"
+            ></label>
+            <HeaderMenu />
+          </div>
+        </div>
       </body>
     </QwikCityProvider>
   );
