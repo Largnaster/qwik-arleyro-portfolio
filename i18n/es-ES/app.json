@@ -1,6 +1,6 @@
 {
     "app": {
-        "changeLocale": "Cambiar idioma",
+        "selectLocale": "Selecciona tu idioma",
         "nav": {
             "home": "Inicio",
             "work": "Experiencia",
