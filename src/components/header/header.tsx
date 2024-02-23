@@ -10,7 +10,7 @@ export const HeaderMenu = component$(() => {
   const t = inlineTranslate();
 
   return (
-    <ul class="dui-menu dui-menu-vertical p-4 max-lg:w-80 min-h-full bg-base-200 text-base-content lg:px-1 lg:dui-menu-horizontal lg:rounded-box">
+    <ul class="dui-menu dui-menu-vertical max-lg:p-4 max-lg:w-80 min-h-full bg-base-200 text-base-content lg:px-1 lg:dui-menu-horizontal lg:rounded-box">
       <li>
         <a href="#introduction">
           <div class="flex items-center flex-nowrap">
