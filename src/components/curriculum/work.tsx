@@ -16,8 +16,7 @@ interface ProjectInfo {
   url?: string;
 }
 
-interface TechnologiesChipProps
-  extends Required<Pick<ProjectInfo, "technologies">> {}
+type TechnologiesChipProps = Required<Pick<ProjectInfo, "technologies">>;
 
 const TechnologiesChipGroup = component$<TechnologiesChipProps>(
   ({ technologies }) => {
@@ -26,20 +25,16 @@ const TechnologiesChipGroup = component$<TechnologiesChipProps>(
     }
 
     return (
-      <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div>
         {technologies.map((technology) => (
-          <div
-            key={`technology_title_${technology.technologyName}`}
-            class="tech-card"
-          >
+          <div key={`technology_title_${technology.technologyName}`}>
             <img
-              class="technology-icon"
               src={technology.iconPath}
               alt={technology.technologyName}
               width={50}
               height={50}
             />
-            <p class="muted">{technology.technologyName}</p>
+            <p>{technology.technologyName}</p>
           </div>
         ))}
       </div>
@@ -127,7 +122,7 @@ export default component$(() => {
       <h2>{t("app.work.title")}</h2>
       <div>
         <p>{t("app.work.myWork")}</p>
-        <div class="card-container">
+        <div>
           {worksList.map((work) => (
             <Card
               key={`work_card_${work.name}`}
@@ -137,7 +132,7 @@ export default component$(() => {
               }
               description={work.description}
             >
-              <div q:slot="card-title" class="flex flex-row items-center gap-1">
+              <div q:slot="card-title">
                 <h3>
                   <a href={work.url} target="_blank" rel="noreferrer">
                     {work.name}
@@ -160,13 +155,13 @@ export default component$(() => {
       </div>
       <div>
         <h3>{t("app.work.projects")}</h3>
-        <div class="card-container">
+        <div>
           {projectsList.map((project) => (
             <Card
               key={`project_card_${project.name}`}
               description={project.description}
             >
-              <div q:slot="card-title" class="flex flex-row items-center gap-1">
+              <div q:slot="card-title">
                 <h3>
                   {project.url ? (
                     <a href={project.url} target="_blank" rel="noreferrer">

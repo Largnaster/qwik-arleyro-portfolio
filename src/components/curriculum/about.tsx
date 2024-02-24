@@ -22,10 +22,10 @@ export default component$(() => {
     <div id="about">
       <h2>{t("app.about.title")}</h2>
       <div>
-        <div class="large">{t("app.about.location")}</div>
+        <div>{t("app.about.location")}</div>
       </div>
       <div>
-        <div class="button-group">
+        <div>
           {ideasList.map((idea) => (
             <Chip key={`idea_chip_${idea}`} text={idea} />
           ))}

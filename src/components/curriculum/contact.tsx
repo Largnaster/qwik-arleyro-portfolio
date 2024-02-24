@@ -10,7 +10,7 @@ export default component$(() => {
       <div>
         <p>{t("app.contact.description")}</p>
       </div>
-      <div class="large">
+      <div>
         <a href="mailto:arleyro91@gmail.com">arleyro91@gmail.com</a>
       </div>
     </div>
