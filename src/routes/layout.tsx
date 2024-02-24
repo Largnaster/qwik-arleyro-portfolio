@@ -14,7 +14,7 @@ export default component$(() => {
   return (
     <main>
       <Header />
-      <div class="dui-hero">
+      <div class="container mx-auto px-4">
         <Slot />
       </div>
       <Footer />
