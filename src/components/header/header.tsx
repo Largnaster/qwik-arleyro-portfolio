@@ -81,18 +81,16 @@ export const Header = component$(() => {
           variant="text"
           aria-label="theme change button"
         >
-          <div class="relative inset-0 flex items-center justify-center w-5">
-            <LuSun
-              class={`absolute h-6 w-6 transition-transform ${
-                theme.value === "night" && "hidden"
-              }`}
-            />
-            <LuMoon
-              class={`absolute h-6 w-6 transition-transform ${
-                theme.value === "winter" && "hidden"
-              }`}
-            />
-          </div>
+          <label
+            class={`dui-swap dui-swap-rotate ${theme.value === "winter" && "dui-swap-active"}`}
+          >
+            <div class="dui-swap-on">
+              <LuSun class="h-6 w-6" />
+            </div>
+            <div class="dui-swap-off">
+              <LuMoon class="h-6 w-6" />
+            </div>
+          </label>
         </Button>
       </div>
     </header>
