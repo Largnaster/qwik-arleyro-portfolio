@@ -1,17 +1,15 @@
 import { $, component$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 import {
-  inlineTranslate,
   localizePath,
   useDisplayName,
   useSpeakConfig,
   useSpeakLocale
 } from "qwik-speak";
-
+import { LuLanguages } from "@qwikest/icons/lucide";
 import type { SpeakLocale } from "qwik-speak";
 
 export const ChangeLocale = component$(() => {
-  const t = inlineTranslate();
   const dn = useDisplayName();
 
   const loc = useLocation();
@@ -32,7 +30,9 @@ export const ChangeLocale = component$(() => {
     <ul class="dui-menu dui-menu-horizontal bg-base-200 dui-rounded-box">
       <li>
         <details>
-          <summary>{t("app.selectLocale")}</summary>
+          <summary>
+            <LuLanguages class="h-5 w-5" />
+          </summary>
           <ul>
             {config.supportedLocales.map((langOption) => (
               <li key={langOption.lang}>
