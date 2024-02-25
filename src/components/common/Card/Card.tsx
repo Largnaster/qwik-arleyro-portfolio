@@ -27,7 +27,7 @@ export default component$<CardProps>((props) => {
   return (
     <div key={key} class="dui-card lg:dui-card-side bg-base-100 shadow-xl">
       {previewImage && (
-        <figure class="max-h-64 [&_img]:w-full [&_img]:h-auto lg:max-xl:[&_img]:w-auto lg:max-xl:[&_img]:h-full">
+        <figure class="max-h-80 [&_img]:w-full [&_img]:h-auto lg:max-xl:[&_img]:w-auto lg:max-xl:[&_img]:h-full">
           <img
             src={previewImage}
             alt={`Preview for ${key}`}
