@@ -30,7 +30,8 @@
             "projectsList": {
                 "discordBot": "Un proyecto personal aún en desarrollo de un bot para Discord, el cual incluirá un juego de cartas que podrá ser jugado a través del chat.",
                 "constellations": "Este es un proyecto personal de una aplicación web que permite ver las constelaciones del zodiaco y sus características con una vista 3D del cielo."
-            }
+            },
+            "showAlbum": "Ver álbum"
         },
         "about": {
             "title": "Sobre mi",

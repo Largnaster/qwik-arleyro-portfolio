@@ -30,7 +30,8 @@
             "projectsList": {
                 "discordBot": "This is a personal project of a Discord bot still under development, which will include a card game that can be played in the chat.",
                 "constellations": "This is a personal project of a web application that allows you to see the constellations of the zodiac and their characteristics with a 3D view of the sky."
-            }
+            },
+            "showAlbum": "Show album"
         },
         "about": {
             "title": "About me",
