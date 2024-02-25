@@ -118,7 +118,7 @@ export default component$(() => {
                 onClick$={handleOpenAlbumModal$}
                 class="dui-btn dui-btn-info"
               >
-                {t("app.work.modal.showAlbum")}
+                {t("app.work.showAlbum")}
               </button>
             </div>
           </Card>
