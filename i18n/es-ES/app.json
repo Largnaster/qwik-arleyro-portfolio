@@ -29,7 +29,8 @@
             },
             "projectsList": {
                 "discordBot": "Un proyecto personal aún en desarrollo de un bot para Discord, el cual incluirá un juego de cartas que podrá ser jugado a través del chat.",
-                "constellations": "Este es un proyecto personal de una aplicación web que permite ver las constelaciones del zodiaco y sus características con una vista 3D del cielo."
+                "constellations": "Este es un proyecto personal de una aplicación web que permite ver las constelaciones del zodiaco y sus características con una vista 3D del cielo.",
+                "pick": "En este proyecto, participé activamente en la transición a un nuevo estilo utilizando Material-UI y una plantilla adquirida. Contribuí de manera significativa al desarrollo del dashboard para clientes, mejorando la interacción y accesibilidad de la información. Implementé funciones detalladas para solicitudes de crédito, desgloses visuales de datos cruciales y una pestaña de amortización para proyecciones de cuotas de préstamos futuros. También desarrollé un formulario de solicitud de crédito dinámico y con múltiples pasos, integrando seguridad basada en tokens únicos y recolección de datos personalizada, lo que mejoró considerablemente la experiencia del usuario y la eficiencia administrativa."
             },
             "showAlbum": "Ver álbum"
         },

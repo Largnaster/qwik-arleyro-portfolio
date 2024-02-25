@@ -29,7 +29,8 @@
             },
             "projectsList": {
                 "discordBot": "This is a personal project of a Discord bot still under development, which will include a card game that can be played in the chat.",
-                "constellations": "This is a personal project of a web application that allows you to see the constellations of the zodiac and their characteristics with a 3D view of the sky."
+                "constellations": "This is a personal project of a web application that allows you to see the constellations of the zodiac and their characteristics with a 3D view of the sky.",
+                "pick": "In this project, I actively participated in the transition to a new style using Material-UI and an acquired template. I contributed significantly to the development of the dashboard for clients, improving interaction and accessibility of information. I implemented detailed functions for credit applications, visual breakdowns of crucial data and an amortization tab for future loan installment projections. I also developed a dynamic, multi-step credit application form, integrating unique token-based security and customized data collection, which greatly improved user experience and administrative efficiency."
             },
             "showAlbum": "Show album"
         },
