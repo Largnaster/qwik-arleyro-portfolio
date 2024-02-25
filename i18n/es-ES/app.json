@@ -8,7 +8,8 @@
             "contact": "Contacto"
         },
         "common": {
-            "present": "Presente"
+            "present": "Presente",
+            "noContentProvided": "No se ha proporcionado contenido"
         },
         "introduction": {
             "title": "Bryann Torres",
