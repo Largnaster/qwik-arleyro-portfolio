@@ -1,4 +1,10 @@
-import { component$, useStore } from "@builder.io/qwik";
+import {
+  component$,
+  useSignal,
+  useStore,
+  $,
+  useOnWindow
+} from "@builder.io/qwik";
 import { inlineTranslate } from "qwik-speak";
 import Card from "../common/Card/Card";
 
@@ -37,6 +43,17 @@ const TechnologiesChipGroup = component$<TechnologiesChipProps>(
 
 export default component$(() => {
   const t = inlineTranslate();
+  const isAlbumModalOpen = useSignal<boolean>(false);
+  const modalBackdropRef = useSignal<Element>();
+
+  const handleOpenAlbumModal$ = $(() => {
+    isAlbumModalOpen.value = true;
+  });
+
+  const handleCloseAlbumModal$ = $((e: PointerEvent) => {
+    e.preventDefault();
+    isAlbumModalOpen.value = false;
+  });
 
   const projectsList = useStore<ProjectInfo[]>([
     {
@@ -61,6 +78,15 @@ export default component$(() => {
       previewImage: "/images/form.jpg"
     }
   ]);
+
+  useOnWindow(
+    "keydown",
+    $((e: KeyboardEvent) => {
+      if (e.key === "Escape" && isAlbumModalOpen.value) {
+        isAlbumModalOpen.value = false;
+      }
+    })
+  );
 
   return (
     <div id="work">
@@ -87,6 +113,14 @@ export default component$(() => {
                 <TechnologiesChipGroup technologies={work.technologies} />
               )}
             </div>
+            <div q:slot="card-actions">
+              <button
+                onClick$={handleOpenAlbumModal$}
+                class="dui-btn dui-btn-info"
+              >
+                {t("app.work.modal.showAlbum")}
+              </button>
+            </div>
           </Card>
         ))}
       </div>
@@ -111,6 +145,16 @@ export default component$(() => {
           </Card>
         ))}
       </div>
+      <dialog class={`dui-modal ${isAlbumModalOpen.value && "dui-modal-open"}`}>
+        <div class="dui-modal-box">
+          <h2>Album</h2>
+        </div>
+        <div
+          ref={modalBackdropRef}
+          class="dui-modal-backdrop"
+          onClick$={handleCloseAlbumModal$}
+        ></div>
+      </dialog>
     </div>
   );
 });
