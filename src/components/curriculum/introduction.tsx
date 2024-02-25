@@ -65,7 +65,7 @@ export default component$(() => {
             <p>
               <strong>{t("app.introduction.frameworks")}</strong>
             </p>
-            <div class="flex flex-row space-x-3">
+            <div class="flex flex-wrap flex-row space-x-3">
               {technologiesList.map((technology) => (
                 <Chip
                   key={`technology_chip_${technology.label}`}
@@ -79,7 +79,7 @@ export default component$(() => {
             <p>
               <strong>{t("app.introduction.tools")}</strong>
             </p>
-            <div class="flex flex-row space-x-3">
+            <div class="flex flex-wrap flex-row space-x-3">
               {toolsList.map((tool) => (
                 <Chip
                   key={`technology_chip_${tool.label}`}
