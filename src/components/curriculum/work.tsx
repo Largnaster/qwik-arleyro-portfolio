@@ -1,18 +1,14 @@
-import { Fragment, component$, useStore } from "@builder.io/qwik";
+import { component$, useStore } from "@builder.io/qwik";
 import { inlineTranslate } from "qwik-speak";
 import Card from "../common/Card/Card";
-import { LuExternalLink } from "@qwikest/icons/lucide";
 
-interface Technology {
-  technologyName: string;
-  iconPath: string;
-}
 interface ProjectInfo {
   name: string;
   startDate?: string;
   endDate?: string;
-  description: string;
-  technologies?: Technology[];
+  description?: string;
+  technologies?: string[];
+  previewImage?: string;
   url?: string;
 }
 
@@ -25,16 +21,13 @@ const TechnologiesChipGroup = component$<TechnologiesChipProps>(
     }
 
     return (
-      <div>
+      <div class="flex flex-wrap flex-row items-center justify-start space-x-2 mt-3">
         {technologies.map((technology) => (
-          <div key={`technology_title_${technology.technologyName}`}>
-            <img
-              src={technology.iconPath}
-              alt={technology.technologyName}
-              width={50}
-              height={50}
-            />
-            <p>{technology.technologyName}</p>
+          <div
+            key={`technology_title_${technology}`}
+            class="dui-badge dui-badge-lg dui-badge-primary"
+          >
+            {technology}
           </div>
         ))}
       </div>
@@ -42,44 +35,6 @@ const TechnologiesChipGroup = component$<TechnologiesChipProps>(
   }
 );
 
-type TechnologiesHashMapType = {
-  [key: string]: Technology;
-};
-
-const technologiesHashMap: TechnologiesHashMapType = {
-  react: {
-    technologyName: "React",
-    iconPath: "/images/react-icon.svg"
-  },
-  typescript: {
-    technologyName: "TypeScript",
-    iconPath: "/images/typescript-icon.svg"
-  },
-  discordjs: {
-    technologyName: "Discord.js",
-    iconPath: "/images/discordjs-logo.webp"
-  },
-  django: {
-    technologyName: "Django",
-    iconPath: "/images/django-icon.svg"
-  },
-  nodejs: {
-    technologyName: "Node.js",
-    iconPath: "/images/nodejs-icon.svg"
-  },
-  postgresql: {
-    technologyName: "PostgreSQL",
-    iconPath: "/images/postgresql-icon.svg"
-  },
-  vite: {
-    technologyName: "Vite",
-    iconPath: "/images/vite-icon.svg"
-  },
-  mongodb: {
-    technologyName: "MongoDB",
-    iconPath: "/images/mongodb-icon.svg"
-  }
-};
 export default component$(() => {
   const t = inlineTranslate();
 
@@ -87,12 +42,7 @@ export default component$(() => {
     {
       name: "Discord Bot",
       description: t("app.work.projectsList.discordBot"),
-      technologies: [
-        technologiesHashMap["discordjs"],
-        technologiesHashMap["mongodb"],
-        technologiesHashMap["nodejs"],
-        technologiesHashMap["typescript"]
-      ]
+      technologies: ["React", "Django", "TypeScript", "PostgreSQL", "Vite"]
     },
     {
       name: "Constellations",
@@ -106,88 +56,60 @@ export default component$(() => {
       name: "I-comm Solutions SAS",
       startDate: t("app.work.worksList.iCommStartDate"),
       description: t("app.work.worksList.iComm"),
-      technologies: [
-        technologiesHashMap["react"],
-        technologiesHashMap["django"],
-        technologiesHashMap["typescript"],
-        technologiesHashMap["postgresql"],
-        technologiesHashMap["vite"]
-      ],
-      url: "https://i-comm.co/"
+      technologies: ["React", "Django", "TypeScript", "PostgreSQL", "Vite"],
+      url: "https://i-comm.co/",
+      previewImage: "/images/form.jpg"
     }
   ]);
 
   return (
     <div id="work">
-      <h2>{t("app.work.title")}</h2>
-      <div>
+      <div class="typo max-w-none text-left">
+        <h2>{t("app.work.title")}</h2>
         <p>{t("app.work.myWork")}</p>
-        <div>
-          {worksList.map((work) => (
-            <Card
-              key={`work_card_${work.name}`}
-              subtitle={
-                work.startDate &&
-                `${work.startDate} - ${work.endDate ?? t("app.common.present")}`
-              }
-              description={work.description}
-            >
-              <div q:slot="card-title">
-                <h3>
-                  <a href={work.url} target="_blank" rel="noreferrer">
-                    {work.name}
-                  </a>
-                </h3>
-                <LuExternalLink class="h-[1.3rem] w-[1.3rem]" />
-              </div>
-              <div q:slot="card-footer">
-                {work.technologies && (
-                  <Fragment>
-                    <hr />
-                    <TechnologiesChipGroup technologies={work.technologies} />
-                  </Fragment>
-                )}
-              </div>
-            </Card>
-          ))}
-        </div>
+      </div>
+      <div class="flex flex-col gap-5">
+        {worksList.map((work) => (
+          <Card
+            key={`work_card_${work.name}`}
+            title={work.name}
+            url={work.url}
+            previewImage={work.previewImage}
+            subtitle={
+              work.startDate &&
+              `${work.startDate} - ${work.endDate ?? t("app.common.present")}`
+            }
+            descriptionIsComponent
+          >
+            <div q:slot="card-content">
+              <p>{work.description}</p>
+              {work.technologies && (
+                <TechnologiesChipGroup technologies={work.technologies} />
+              )}
+            </div>
+          </Card>
+        ))}
+      </div>
+      <div class="typo max-w-none text-left">
+        <h2>{t("app.work.projects")}</h2>
         <p>{t("app.work.experience")}</p>
       </div>
-      <div>
-        <h3>{t("app.work.projects")}</h3>
-        <div>
-          {projectsList.map((project) => (
-            <Card
-              key={`project_card_${project.name}`}
-              description={project.description}
-            >
-              <div q:slot="card-title">
-                <h3>
-                  {project.url ? (
-                    <a href={project.url} target="_blank" rel="noreferrer">
-                      {project.name}
-                    </a>
-                  ) : (
-                    project.name
-                  )}
-                </h3>
-                {project.url && (
-                  <LuExternalLink class="h-[1.3rem] w-[1.3rem]" />
-                )}
-              </div>
-              <div q:slot="card-footer">
-                {project.technologies && (
-                  <Fragment>
-                    <hr />
-                    <TechnologiesChipGroup
-                      technologies={project.technologies}
-                    />
-                  </Fragment>
-                )}
-              </div>
-            </Card>
-          ))}
-        </div>
+      <div class="flex flex-col gap-5">
+        {projectsList.map((project) => (
+          <Card
+            key={`project_card_${project.name}`}
+            title={project.name}
+            url={project.url}
+            descriptionIsComponent
+          >
+            <div q:slot="card-content">
+              <p>{project.description}</p>
+              {project.technologies && (
+                <TechnologiesChipGroup technologies={project.technologies} />
+              )}
+            </div>
+          </Card>
+        ))}
       </div>
     </div>
   );
