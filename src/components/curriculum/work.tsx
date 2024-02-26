@@ -45,8 +45,8 @@ const TechnologiesChipGroup = component$<TechnologiesChipProps>(
 export default component$(() => {
   const t = inlineTranslate();
   const isAlbumModalOpen = useSignal<boolean>(false);
-  const modalBackdropRef = useSignal<Element>();
   const modalImagesSet = useSignal<string[]>([]);
+  const btnLabelText = useSignal<string>(t("app.work.showAlbum"));
 
   const handleOpenAlbumModal$ = $((imagesSet: string[]) => {
     isAlbumModalOpen.value = true;
@@ -157,7 +157,7 @@ export default component$(() => {
                   }
                   class="dui-btn dui-btn-info"
                 >
-                  {t("app.work.showAlbum")}
+                  {btnLabelText}
                 </button>
               </div>
             )}
@@ -176,11 +176,7 @@ export default component$(() => {
             />
           ))}
         </div>
-        <div
-          ref={modalBackdropRef}
-          class="dui-modal-backdrop"
-          onClick$={handleCloseAlbumModal$}
-        ></div>
+        <div class="dui-modal-backdrop" onClick$={handleCloseAlbumModal$}></div>
       </dialog>
     </div>
   );
