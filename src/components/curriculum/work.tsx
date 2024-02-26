@@ -16,6 +16,7 @@ interface ProjectInfo {
   technologies?: string[];
   previewImage?: string;
   url?: string;
+  imagesSet?: string[];
 }
 
 type TechnologiesChipProps = Required<Pick<ProjectInfo, "technologies">>;
@@ -45,9 +46,11 @@ export default component$(() => {
   const t = inlineTranslate();
   const isAlbumModalOpen = useSignal<boolean>(false);
   const modalBackdropRef = useSignal<Element>();
+  const modalImagesSet = useSignal<string[]>([]);
 
-  const handleOpenAlbumModal$ = $(() => {
+  const handleOpenAlbumModal$ = $((imagesSet: string[]) => {
     isAlbumModalOpen.value = true;
+    modalImagesSet.value = imagesSet;
   });
 
   const handleCloseAlbumModal$ = $((e: PointerEvent) => {
@@ -56,6 +59,18 @@ export default component$(() => {
   });
 
   const projectsList = useStore<ProjectInfo[]>([
+    {
+      name: "Pick/Inappsis Fintech",
+      description: t("app.work.projectsList.pick"),
+      technologies: ["React", "Django", "TypeScript", "PostgreSQL", "Vite"],
+      imagesSet: [
+        "/images/projects/pick-dashboard.webp",
+        "/images/projects/pick-simulator.webp",
+        "/images/projects/pick-form.webp",
+        "/images/projects/pick-list.webp",
+        "/images/projects/pick-details.webp"
+      ]
+    },
     {
       name: "Discord Bot",
       description: t("app.work.projectsList.discordBot"),
@@ -75,7 +90,7 @@ export default component$(() => {
       description: t("app.work.worksList.iComm"),
       technologies: ["React", "Django", "TypeScript", "PostgreSQL", "Vite"],
       url: "https://i-comm.co/",
-      previewImage: "/images/form.jpg"
+      previewImage: "/images/toolit-dashboard.webp"
     }
   ]);
 
@@ -113,14 +128,6 @@ export default component$(() => {
                 <TechnologiesChipGroup technologies={work.technologies} />
               )}
             </div>
-            <div q:slot="card-actions">
-              <button
-                onClick$={handleOpenAlbumModal$}
-                class="dui-btn dui-btn-info"
-              >
-                {t("app.work.showAlbum")}
-              </button>
-            </div>
           </Card>
         ))}
       </div>
@@ -142,12 +149,32 @@ export default component$(() => {
                 <TechnologiesChipGroup technologies={project.technologies} />
               )}
             </div>
+            {project.imagesSet && project.imagesSet.length > 0 && (
+              <div q:slot="card-actions">
+                <button
+                  onClick$={() =>
+                    handleOpenAlbumModal$(project.imagesSet ?? [])
+                  }
+                  class="dui-btn dui-btn-info"
+                >
+                  {t("app.work.showAlbum")}
+                </button>
+              </div>
+            )}
           </Card>
         ))}
       </div>
       <dialog class={`dui-modal ${isAlbumModalOpen.value && "dui-modal-open"}`}>
         <div class="dui-modal-box">
-          <h2>Album</h2>
+          {modalImagesSet.value.map((image, ind) => (
+            <img
+              key={`modal_image_${ind}`}
+              src={image}
+              alt={`Example page ${ind}`}
+              width={100}
+              height={100}
+            />
+          ))}
         </div>
         <div
           ref={modalBackdropRef}
