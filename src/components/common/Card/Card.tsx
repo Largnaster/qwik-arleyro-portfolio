@@ -49,7 +49,7 @@ export default component$<CardProps>((props) => {
             title
           )}
         </h2>
-        {subtitle && <p class="text-neutral-content">{subtitle}</p>}
+        {subtitle && <p class="text-neutral-content flex-grow-0">{subtitle}</p>}
         {descriptionIsComponent ? (
           <Slot name="card-content" />
         ) : (
