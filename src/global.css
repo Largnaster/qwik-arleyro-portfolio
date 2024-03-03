@@ -9,4 +9,13 @@
   .typo-block {
     @apply prose dark:prose-invert max-w-none text-left;
   }
+  .carousel-btn {
+    @apply absolute z-10 w-[10%] top-0 bottom-0 flex items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity hover:bg-base-100 hover:text-base-content hover:opacity-20 motion-reduce:transition-none motion-reduce:hover:transform-none;
+  }
+  .carousel-btn.left {
+    @apply left-0;
+  }
+  .carousel-btn.right {
+    @apply right-0;
+  }
 }
