@@ -8,6 +8,7 @@ import {
 import { inlineTranslate } from "qwik-speak";
 import Card from "../common/Card/Card";
 import Carousel from "../common/Carousel";
+import { LuX } from "@qwikest/icons/lucide";
 
 interface ProjectInfo {
   name: string;
@@ -176,7 +177,11 @@ export default component$(() => {
         <div class="dui-modal-box w-11/12 max-w-5xl p-0">
           <Carousel imagesSet={modalImagesSet.value} />
         </div>
-        <div class="dui-modal-backdrop" onClick$={handleCloseAlbumModal$}></div>
+        <div class="dui-modal-backdrop" onClick$={handleCloseAlbumModal$}>
+          <button class="absolute right-0 top-0 dui-btn dui-btn-circle dui-btn-ghost mt-4 mr-4">
+            <LuX class="h-8 w-8 text-primary" />
+          </button>
+        </div>
       </dialog>
     </div>
   );
