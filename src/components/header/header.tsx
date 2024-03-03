@@ -2,7 +2,6 @@ import { component$, useContext, $, useTask$ } from "@builder.io/qwik";
 import { inlineTranslate } from "qwik-speak";
 import { ChangeLocale } from "../change-locale/change-locale";
 import { ThemeContext, DrawerIdContext } from "~/root";
-import { Button } from "../common/Button";
 import { LuMoon, LuSun, LuHome, LuMenu } from "@qwikest/icons/lucide";
 import { isBrowser } from "@builder.io/qwik/build";
 
@@ -75,10 +74,9 @@ export const Header = component$(() => {
       </div>
       <div class="dui-navbar-end flex justify-end">
         <ChangeLocale />
-        <Button
+        <button
           class="dui-btn dui-btn-ghost dui-btn-circle ml-5"
           onClick$={handleThemeChange}
-          variant="text"
           aria-label="theme change button"
         >
           <label
@@ -91,7 +89,7 @@ export const Header = component$(() => {
               <LuMoon class="h-6 w-6" />
             </div>
           </label>
-        </Button>
+        </button>
       </div>
     </header>
   );
