@@ -10,7 +10,7 @@
   ],
   "type": "module",
   "scripts": {
-    "prebuild": "npm install --include=optional sharp",
+    "prebuild": "yarn add sharp --ignore-engines",
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
