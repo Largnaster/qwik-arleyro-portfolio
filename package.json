@@ -2,7 +2,7 @@
   "name": "@largnaster/portfolio-website",
   "description": "My personal portfolio website build with Qwik",
   "engines": {
-    "node": "^18.0.0"
+    "node": "^20.0.0"
   },
   "private": true,
   "trustedDependencies": [
