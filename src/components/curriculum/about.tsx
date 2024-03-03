@@ -1,11 +1,10 @@
 import { component$, useStore } from "@builder.io/qwik";
 import { inlineTranslate } from "qwik-speak";
-import Chip from "../common/Chip";
 
 export default component$(() => {
   const t = inlineTranslate();
 
-  const ideasList = useStore([
+  const skillsList = useStore([
     "English",
     "Spanish",
     "Self-taught",
@@ -19,20 +18,21 @@ export default component$(() => {
   ]);
 
   return (
-    <div id="about">
+    <div class="typo-block" id="about">
       <h2>{t("app.about.title")}</h2>
-      <div>
-        <div>{t("app.about.location")}</div>
-      </div>
-      <div>
-        <div>
-          {ideasList.map((idea) => (
-            <Chip key={`idea_chip_${idea}`} text={idea} />
-          ))}
-        </div>
-      </div>
+      <p>{t("app.about.location")}</p>
       <p>{t("app.about.firstDescription")}</p>
       <p>{t("app.about.secondDescription")}</p>
+      <div class="flex flex-wrap flex-row items-center justify-start space-x-2 mt-3">
+        {skillsList.map((skill) => (
+          <div
+            key={`skill_badge_${skill}`}
+            class="dui-badge dui-badge-lg dui-badge-primary"
+          >
+            {skill}
+          </div>
+        ))}
+      </div>
     </div>
   );
 });
