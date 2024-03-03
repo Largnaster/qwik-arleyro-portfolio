@@ -2,7 +2,7 @@
   "name": "@largnaster/portfolio-website",
   "description": "My personal portfolio website build with Qwik",
   "engines": {
-    "node": "^20.11.0"
+    "node": "^20.0.0"
   },
   "private": true,
   "trustedDependencies": [
@@ -10,6 +10,7 @@
   ],
   "type": "module",
   "scripts": {
+    "prebuild": "npm install --include=optional sharp",
     "build": "qwik build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
