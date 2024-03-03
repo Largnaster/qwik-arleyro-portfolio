@@ -7,6 +7,7 @@ import {
 } from "@builder.io/qwik";
 import { inlineTranslate } from "qwik-speak";
 import Card from "../common/Card/Card";
+import Carousel from "../common/Carousel";
 
 interface ProjectInfo {
   name: string;
@@ -165,16 +166,8 @@ export default component$(() => {
         ))}
       </div>
       <dialog class={`dui-modal ${isAlbumModalOpen.value && "dui-modal-open"}`}>
-        <div class="dui-modal-box">
-          {modalImagesSet.value.map((image, ind) => (
-            <img
-              key={`modal_image_${ind}`}
-              src={image}
-              alt={`Example page ${ind}`}
-              width={100}
-              height={100}
-            />
-          ))}
+        <div class="dui-modal-box w-11/12 max-w-5xl p-0">
+          <Carousel imagesSet={modalImagesSet.value} />
         </div>
         <div class="dui-modal-backdrop" onClick$={handleCloseAlbumModal$}></div>
       </dialog>
