@@ -58,7 +58,7 @@ export default component$(() => {
           </div>
         </div>
       </div>
-      <div class="typo max-w-none text-left">
+      <div class="typo-block">
         <p>{t("app.introduction.aboutMe")}</p>
         <ul>
           <li>

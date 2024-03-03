@@ -6,4 +6,7 @@
   .typo {
     @apply prose dark:prose-invert;
   }
+  .typo-block {
+    @apply prose dark:prose-invert max-w-none text-left;
+  }
 }

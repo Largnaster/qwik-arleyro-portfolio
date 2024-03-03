@@ -105,7 +105,7 @@ export default component$(() => {
 
   return (
     <div id="work">
-      <div class="typo max-w-none text-left">
+      <div class="typo-block">
         <h2>{t("app.work.title")}</h2>
         <p>{t("app.work.myWork")}</p>
       </div>
@@ -131,7 +131,7 @@ export default component$(() => {
           </Card>
         ))}
       </div>
-      <div class="typo max-w-none text-left">
+      <div class="typo-block">
         <h2>{t("app.work.projects")}</h2>
         <p>{t("app.work.experience")}</p>
       </div>
