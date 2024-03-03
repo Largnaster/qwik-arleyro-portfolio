@@ -24,7 +24,7 @@ export default component$<CarouselProps>(({ imagesSet }) => {
       <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
         {imagesSet.map((imageSrc, ind) => (
           <div
-            key={`carousel_image_${ind}`}
+            key={`carousel_image_${imageSrc.split("/").pop()}`}
             class={`relative float-left -mr-[100%] ${ind !== currentStep.value && "hidden"} w-full transition-transform duration-500 ease-in-out motion-reduce:transition-none`}
           >
             <img
