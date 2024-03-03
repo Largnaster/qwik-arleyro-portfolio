@@ -19,6 +19,11 @@ export default defineConfig((): UserConfig => {
     },
     server: {
       open: true,
+    },
+    build: {
+      rollupOptions: {
+        external: ["sharp"]
+      }
     }
   };
 });
