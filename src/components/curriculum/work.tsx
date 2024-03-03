@@ -75,7 +75,14 @@ export default component$(() => {
     {
       name: "Discord Bot",
       description: t("app.work.projectsList.discordBot"),
-      technologies: ["React", "Django", "TypeScript", "PostgreSQL", "Vite"]
+      technologies: [
+        "NodeJS",
+        "TypeScript",
+        "DiscordJS",
+        "Prisma",
+        "Supabase",
+        "Jest"
+      ]
     },
     {
       name: "Constellations",
