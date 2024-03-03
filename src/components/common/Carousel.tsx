@@ -1,4 +1,4 @@
-import { component$, useSignal } from "@builder.io/qwik";
+import { $, component$, useSignal } from "@builder.io/qwik";
 import { LuChevronLeft, LuChevronRight } from "@qwikest/icons/lucide";
 
 interface CarouselProps {
@@ -7,6 +7,16 @@ interface CarouselProps {
 
 export default component$<CarouselProps>(({ imagesSet }) => {
   const currentStep = useSignal<number>(0);
+
+  const handleCarouselBtnClick$ = $((direction: "left" | "right") => {
+    if (direction === "left") {
+      currentStep.value =
+        currentStep.value === 0 ? imagesSet.length - 1 : currentStep.value - 1;
+    } else {
+      currentStep.value =
+        currentStep.value === imagesSet.length - 1 ? 0 : currentStep.value + 1;
+    }
+  });
 
   return (
     <div class="relative">
@@ -28,10 +38,16 @@ export default component$<CarouselProps>(({ imagesSet }) => {
         ))}
       </div>
       {/* Carousel controls */}
-      <button class="carousel-btn left">
+      <button
+        class="carousel-btn left"
+        onClick$={() => handleCarouselBtnClick$("left")}
+      >
         <LuChevronLeft class="inline-block h-8 w-8" />
       </button>
-      <button class="carousel-btn right">
+      <button
+        class="carousel-btn right"
+        onClick$={() => handleCarouselBtnClick$("right")}
+      >
         <LuChevronRight class="inline-block h-8 w-8" />
       </button>
     </div>
