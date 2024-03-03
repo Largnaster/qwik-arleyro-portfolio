@@ -17,7 +17,7 @@ export default component$(() => {
             target="_blank"
             href="https://github.com/Largnaster/qwik-arleyro-portfolio"
           >
-            This project
+            {t("app.footer.sourceCode")}
           </Link>
         </nav>
         <nav>

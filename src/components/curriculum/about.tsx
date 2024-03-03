@@ -5,16 +5,16 @@ export default component$(() => {
   const t = inlineTranslate();
 
   const skillsList = useStore([
-    "English",
-    "Spanish",
-    "Self-taught",
-    "Teamwork",
-    "Stress management",
-    "Programming",
-    "Gaming",
-    "Music",
-    "Cooking",
-    "Anime"
+    t("app.about.skills.english"),
+    t("app.about.skills.spanish"),
+    t("app.about.skills.selfTaught"),
+    t("app.about.skills.teamwork"),
+    t("app.about.skills.stressManagement"),
+    t("app.about.skills.programming"),
+    t("app.about.skills.gaming"),
+    t("app.about.skills.music"),
+    t("app.about.skills.cooking"),
+    t("app.about.skills.anime")
   ]);
 
   return (

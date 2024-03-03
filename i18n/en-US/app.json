@@ -38,7 +38,19 @@
             "title": "About me",
             "location": "Based in Colombia",
             "firstDescription": "Think of myself as a person who is always learning and has a flair for taking up new talents. I can confidently converse in English at a B2 level and thrive in team environments. Stress? I've got it under control, turning it into a catalyst for productivity. I've always been intrigued by programming and want to learn more about it.",
-            "secondDescription": "When I'm not working or learning, you'll probably find me immersed in one of my hobbies. I play video games a lot, and you can often find me playing on my computer. My taste in music is as varied as they come. I enjoy cooking, although I don't do it every day, and anime is my go-to escape, a world I love to explore in my downtime."
+            "secondDescription": "When I'm not working or learning, you'll probably find me immersed in one of my hobbies. I play video games a lot, and you can often find me playing on my computer. My taste in music is as varied as they come. I enjoy cooking, although I don't do it every day, and anime is my go-to escape, a world I love to explore in my downtime.",
+            "skills": {
+                "english": "English",
+                "spanish": "Spanish",
+                "selfTaught": "Self-taught",
+                "teamwork": "Teamwork",
+                "stressManagement": "Stress management",
+                "programming": "Programming",
+                "gaming": "Gaming",
+                "music": "Music",
+                "cooking": "Cooking",
+                "anime": "Anime"
+            }
         },
         "contact": {
             "title": "Contact",
@@ -47,7 +59,8 @@
         "footer": {
             "externalLinks": "External links",
             "resources": "Resources",
-            "contact": "Reach me"
+            "contact": "Reach me",
+            "sourceCode": "Source code"
         }
     }
 }
